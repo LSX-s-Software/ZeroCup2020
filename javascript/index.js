@@ -60,7 +60,7 @@ window.addEventListener('scroll', () => {
             sider.style.opacity = 0;
         }
     }
-    if(scrolled < 4) {
+    if (scrolled < 4) {
         for (item of s3wrapper) {
             item.style.opacity = "0";
         }
@@ -77,17 +77,68 @@ $(document).ready(function () {
         direction: 'horizontal',
         effect: 'slide',
         observeParents: true,
+        observer: true,
         slidesPerView: 3,
         loop: true,
         speed: 500,
         centeredSlides: true,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         }
     });
     mySwiper.on('slideChange', function () {
         console.log(mySwiper.realIndex);
         //这里写切换游戏介绍的代码
+    });
+    var status = [false, false];
+    $("#more1").click(function (e) {
+        e.preventDefault();
+        if (!status[0]) {
+            $(".swiper-container").fadeIn();
+            $(".mask").css("display", "flex");
+            $("#more1 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
+            $("#warpper1").css({
+                transform: "translate(-20%,-20%)"
+            });
+        } else {
+            $(".swiper-container").fadeOut();
+            $(".mask").fadeOut();
+            $("#more1 svg text tspan").html("了解更多");
+            $("#warpper1").css({
+                transform: "none"
+            });
+        }
+        status[0] = !status[0];
+    });
+    $("#more2").click(function (e) {
+        e.preventDefault();
+        if (!status[1]) {
+            $(".swiper-container").fadeIn();
+            $(".mask").css("display", "flex");
+            $(".mask h3").css("padding-right", "15%");
+            $(".swiper-container").css({
+                left: "-22%",
+                right: "auto"
+            });
+            $(".mask").css({
+                left: "0",
+                right: "auto",
+                width: "50%"
+            });
+            $("#warpper2").css({
+                transform: "translate(20%,20%)"
+            });
+            $("#more2 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
+        } else {
+            $(".swiper-container").fadeOut();
+            $(".mask").fadeOut();
+            $(".mask h3").css("padding-right", "50%");
+            $("#warpper2").css({
+                transform: "none"
+            });
+            $("#more2 svg text tspan").html("了解更多");
+        }
+        status[1] = !status[1];
     });
 });

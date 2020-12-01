@@ -146,6 +146,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transition: all ease-out 0.5s;
 }
 
 .container .screen.s2 .wrapper .content-wrapper .head {
@@ -212,8 +213,9 @@ body {
 }
 
 .swiper-container, .mask {
-    width: 75vw;
-    height: 100vh;
+    display: none;
+    width: 80vw;
+    height: 116vh;
     transform: skew(-20deg);
     transform-origin: bottom left;
     position: absolute;
@@ -224,15 +226,16 @@ body {
 .mask {
     z-index: 10;
     background-color: transparent;
-    padding: 2rem;
-    display: flex;
+    padding: 5rem;
     align-items: center;
     align-content: center;
     justify-content: flex-start;
     flex-wrap: wrap;
     flex-grow: 0;
     box-sizing: border-box;
-    transform: translateX(16%);
+    transform: translate(16%, -8%);
+    height: 100vh;
+    transition: all ease-out 0.5s;
 }
 
 .mask h1 {
@@ -244,15 +247,16 @@ body {
 .mask h1, .mask h3 {
     width: 100%;
     display: inline-flex;
+    text-shadow: 2px 2px 4px #121212;
 }
 
 .mask h3 {
-    padding-right: 40%;
+    padding-right: 50%;
     white-space: normal;
 }
 
 .swiper-btn {
-    width: 6rem;
+    width: 12.5rem;
     height: 3.125rem;
     display: inline-flex;
     justify-content: space-between;
@@ -279,23 +283,23 @@ body {
 
 .swiper-slide img {
     outline: none;
-    min-height: 100%;
-    min-width: 100%;
-    position: absolute;
+    height: 100vh;
+    position: relative;
+    left: -20%;
 }
 
 .swiper-slide-prev {
     width: 7% !important;
-    filter: brightness(0.5);
+    filter: brightness(0.4);
 }
 
 .swiper-slide-active {
-    width: 20% !important;
-    filter: brightness(0.5);
+    width: 14% !important;
+    filter: brightness(0.6);
 }
 
 .swiper-slide-next {
-    width: 73% !important;
+    width: 79% !important;
     filter: brightness(1.1);
 }
 
@@ -324,7 +328,7 @@ video {
     transform: translate(-50%, -0.5%);
 }
 
-.container .screen.s2 img {
+.video-section img {
     /* transform: all 0.1s; */
     position: absolute;
     transform: translate(0%, 10%);
