@@ -50,7 +50,6 @@ body {
     background-color: rgba(27, 27, 27, 1);
     height: 5000vh;
     width: 100vw;
-    overflow-x: hidden;
 }
 
 /* 第一屏 */
@@ -70,6 +69,7 @@ body {
     height: 48vh;
     width: 25vw;
     display: flex;
+    overflow-x: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
