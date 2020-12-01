@@ -139,6 +139,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .container .screen.s2 .wrapper .content-wrapper {
@@ -235,7 +236,6 @@ body {
     box-sizing: border-box;
     transform: translate(16%, -8%);
     height: 100vh;
-    transition: all ease-out 0.5s;
 }
 
 .mask h1 {

@@ -137,6 +137,15 @@ $(document).ready(function () {
             $("#warpper2").css({
                 transform: "none"
             });
+            $(".mask").css({
+                left: "auto",
+                right: "0",
+                width: "80vw"
+            });
+            $(".swiper-container").css({
+                left: "auto",
+                right: "0"
+            });
             $("#more2 svg text tspan").html("了解更多");
         }
         status[1] = !status[1];
