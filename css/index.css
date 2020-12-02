@@ -30,6 +30,7 @@ body {
     padding: 0;
     white-space: nowrap;
     user-select: none;
+    background-color: rgba(27, 27, 27, 1);
 }
 
 @font-face {
@@ -54,13 +55,14 @@ body {
 
 .container .sidebar {
     position: fixed;
-    z-index: 999;
+    z-index: 15;
     right: 2vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: filter ease-out 0.3s;
 }
 
 .container .sidebar .side {
@@ -111,11 +113,27 @@ body {
     font-size: 4.5rem;
 }
 
+.promote {
+    position: absolute;
+    margin: 15px 0;
+    bottom: 0;
+    font-size: 15px;
+    text-align: center;
+    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.promote p {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 6px;
+}
+
 /* 第二屏 */
 
 
 .banner {
-    z-index: 10;
+    z-index: 100;
     position: sticky;
     display: flex;
     top: 0;
@@ -126,6 +144,7 @@ body {
     width: 100vw;
     height: 8vh;
     color: #1B1B1B;
+    box-shadow: 0px 0px 3px 3px #1B1B1B;
 }
 
 .banner .span {
@@ -446,12 +465,33 @@ video {
     transition: all 2s;
     width: 20.625rem;
     height: 19.875rem;
+    cursor: pointer;
 }
 
 iframe {
-    width: 100%;
-    height: 100vh;
+    width: 85%;
+    height: 92vh;
     background-color: rgba(46, 46, 46, 1);
     /* backdrop-filter: blur(10px); */
     font-family: "SourceHanSansCN-Regular";
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 8vh;
+    transform: translateX(-50%);
+    z-index: 19;
+}
+
+.closeBtn {
+    position: fixed;
+    right: 36px;
+    top: calc(36px + 8vh);
+    z-index: 20;
+    display: none;
+    cursor: pointer;
+}
+
+.closeBtn svg {
+    width: 2rem;
+    height: 2rem;
 }

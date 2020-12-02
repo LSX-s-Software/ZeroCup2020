@@ -28,10 +28,14 @@
                 <div class="smaller">与</div>
                 <div class="bigger">电子竞技</div>
             </div>
+            <div class="promote">
+                <p>向下滑动来了解</p>
+                <img src="source/img/down.svg" id="down" height="50px">
+            </div>
         </div>
         <div class="banner">
-            <div class="span">游戏</div>
-            <div class="span hidden">产业链</div>
+            <div class="span" id="b1">游戏</div>
+            <div class="span hidden" id="b2">产业链</div>
         </div>
         <div class="screen s2">
             <div class="wrapper">
@@ -249,7 +253,7 @@
         <div class="screen s3">
             <div class="wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 0 330.414 317.931">
+                    viewBox="0 0 330.414 317.931" id="hof">
                     <defs>
                         <linearGradient id="linear-gradient" x1="0.255" y1="0.01" x2="0.749" y2="0.997"
                             gradientUnits="objectBoundingBox">
@@ -272,7 +276,7 @@
                     </g>
                 </svg>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 0 330.414 317.931">
+                    viewBox="0 0 330.414 317.931" id="tl">
                     <defs>
                         <linearGradient id="linear-gradient" x1="0.255" y1="0.01" x2="0.749" y2="0.997"
                             gradientUnits="objectBoundingBox">
@@ -298,8 +302,18 @@
         </div>
 
     </div>
-    
-    <iframe src="waterfallflow.html" frameborder="0"></iframe>
+    <div class="closeBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.891 38.891">
+            <g id="组_13" data-name="组 13" transform="translate(133.997 -310.773) rotate(45)">
+                <line id="直线_6" data-name="直线 6" x2="50" transform="translate(127.5 314.5)" fill="none" stroke="#fff"
+                    stroke-width="5" />
+                <line id="直线_7" data-name="直线 7" x2="50" transform="translate(152.5 289.5) rotate(90)" fill="none"
+                    stroke="#fff" stroke-width="5" />
+            </g>
+        </svg>
+    </div>
+    <iframe src="waterfallflow.html" frameborder="0" id="waterflow"></iframe>
+    <iframe src="" frameborder="0" id="timeline"></iframe>
 </body>
 
 </html>

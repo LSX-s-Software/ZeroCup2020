@@ -80,6 +80,16 @@ window.addEventListener('scroll', () => {
 })
 
 $(document).ready(function () {
+    $(".promote").fadeIn(1000);
+    setInterval(function () {
+        $(".promote").animate({ bottom: "+=50px" }, { duration: 2000 }).queue(function (next) {
+            $(".promote").fadeOut(function () { $(".promote").css("bottom", "0"); });
+            next();
+        }).queue(function (next) {
+            $(".promote").fadeIn();
+            next();
+        });
+    }, 10000);
     var mySwiper = new Swiper('.swiper-container', {
         direction: 'horizontal',
         effect: 'slide',
@@ -156,5 +166,30 @@ $(document).ready(function () {
             $("#more2 svg text tspan").html("了解更多");
         }
         status[1] = !status[1];
+    });
+    $("#hof").click(function (e) { 
+        e.preventDefault();
+        $("#waterflow").fadeIn();
+        $(".closeBtn").fadeIn();
+        $("#b1").text("电竞");
+        $("#b2").text("名人堂");
+        $(".sidebar").css("filter", "blur(15px)");
+    });
+    $("#tl").click(function (e) { 
+        e.preventDefault();
+        $("#timeline").fadeIn();
+        $(".closeBtn").fadeIn();
+        $("#b1").text("电竞");
+        $("#b2").text("大事记");
+        $(".sidebar").css("filter", "blur(15px)");
+    });
+    $(".closeBtn").click(function (e) { 
+        e.preventDefault();
+        $(".sidebar").css("filter", "none");
+        $("#waterflow").fadeOut();
+        $("#timeline").fadeOut();
+        $(".closeBtn").fadeOut();
+        $("#b1").text("电子");
+        $("#b2").text("竞技");
     });
 });
