@@ -1,0 +1,99 @@
+body{margin:0;background-color: black;}
+
+.main{
+   margin:4% 5% 2% 5%;
+   column-count: 4;
+   column-gap: 6%;
+   cursor: default;
+   overflow: visible;
+}
+.top{
+  display: flex;
+  align-items: center;
+  background-color: #2E2E2E;
+  width: 100%;
+  height: 7%;
+  font-size: 32px;
+  font-family: HYShangWeiShouShuW;
+  color: #C8A06A;
+  opacity: 1;
+}
+.top span{margin-left: 2%;}
+.main-item {
+  width: 100%;
+  break-inside: avoid;
+  cursor: default;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 20%;
+  transition: all 1.5s linear;
+  position: relative;
+}
+.main-item-img{
+  width: 100%;
+  transition: all 1.5s linear;
+}
+.main-item-img img{
+  width:100%;
+}
+.main-item p{
+  color: white;
+  font-size: 35px;
+  padding-bottom: 10%;
+  word-break : break-all;
+  word-wrap:break-word;
+}
+.wz{
+  color: white;
+  font-size: 35px;
+  display: block;
+  height: 80px;
+  padding: 12% 0 0 0 ;
+  word-break : break-all;
+  word-wrap:break-word;
+  animation-name: fadeIn; /*动画名称*/
+  animation-duration: 2s; /*动画持续时间*/
+  animation-iteration-count: 1; /*动画次数*/
+  animation-delay: 0s; /*延迟时间*/
+}
+.data{
+  list-style: none;
+  padding: 0 0 6% 0;
+  height: auto;
+  font-size: 10px;
+  display: none;
+}
+.logo{
+  position: absolute;
+  width:15%;
+  top: -1%;
+  left: -1%;
+  transform: translateY(0);
+}
+.main-item:hover .wz{
+  display: none;
+}
+.main-item:hover .data{
+  display: block;
+  color: black;
+}
+.main-item:hover{
+  transform: translateY(-10px);
+  background-color: white;
+  transition: all 1.5s linear;
+}
+.main-item:hover .main-item-img{
+  border-radius: 20px;
+  transition: all 1.5s linear;
+}
+@keyframes fadeIn {
+  0% {
+  opacity: 0; /*初始状态 透明度为0*/
+  }
+  50% {
+  opacity: 0; /*中间状态 透明度为0*/
+  }
+  100% {
+  opacity: 1; /*结尾状态 透明度为1*/
+  }
+  }
