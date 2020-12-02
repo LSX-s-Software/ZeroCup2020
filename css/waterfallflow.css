@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "SourceHanSansCN-Regular";
+  src: url(../source/font/SourceHanSansCN-1.000/SourceHanSansCN-Regular.otf);
+}
+
+html {
+  font-size: inherit;
+  font-family: "SourceHanSansCN-Regular";
+}
+
+body {
+  margin: 0;
+  background-color: transparent;
+}
+
+.main {
+  margin: 4% 5% 2% 5%;
+  column-count: 4;
+  column-gap: 6%;
+  cursor: default;
+  overflow: visible;
+}
+
+.top span {
+  margin-left: 2%;
+}
+
+.main-item {
+  width: 100%;
+  break-inside: avoid;
+  text-align: center;
+  border-radius: 1rem;
+  margin-bottom: 20%;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  background-color: #505050;
+}
+
+.main-item-img {
+  width: 100%;
+  transition: all 0.3s linear;
+}
+
+.main-item-img img {
+  width: 100%;
+}
+
+.main-item p {
+  color: white;
+  font-size: 35px;
+  padding-bottom: 10%;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.wz {
+  color: white;
+  font-size: 35px;
+  display: block;
+  height: 80px;
+  padding: 12% 0 0 0;
+  word-break: break-all;
+  word-wrap: break-word;
+  animation-name: fadeIn 0.75s;
+  animation-delay: 0s;
+}
+
+.data {
+  padding: 1rem;
+  height: auto;
+  font-size: 0.75rem;
+  display: none;
+  text-align: left;
+  list-style: none;
+}
+
+.data li:not(.data li:first-child) {
+  margin-left: calc(1.75rem + 8px);
+}
+
+.data li:first-child {
+  text-align: center;
+}
+
+.award {
+  width: 1.75rem;
+  object-fit: contain;
+  float: left;
+  margin: 8px 8px 8px 0;
+}
+
+.data li:first-child img {
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+  margin: 0 8px 0 0;
+}
+
+.data li h1, .data li h2, .data li h3 {
+  margin: 8px;
+}
+
+.logo {
+  position: absolute;
+  width: 15%;
+  top: -1%;
+  left: -1%;
+  transform: translateY(0);
+}
+
+.main-item:hover .wz {
+  display: none;
+}
+
+.main-item:hover .data {
+  display: block;
+  color: white;
+}
+
+.main-item:hover {
+  transform: translateY(-10px);
+  background-color: #707070;
+}
+
+.main-item:hover .main-item-img {
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

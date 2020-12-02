@@ -23,7 +23,7 @@
 }
 
 body {
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "SourceHanSansCN-Regular";
     color: white;
     box-sizing: border-box;
     margin: 0;
@@ -48,7 +48,7 @@ body {
 
 .container {
     background-color: rgba(27, 27, 27, 1);
-    height: 5000vh;
+    height: 1000vh;
     width: 100vw;
 }
 
@@ -92,8 +92,6 @@ body {
 }
 
 .container .screen.s1 .wrapper {
-    height: 48vh;
-    width: 25vw;
     display: flex;
     overflow-x: hidden;
     flex-direction: column;
@@ -448,4 +446,12 @@ video {
     transition: all 2s;
     width: 20.625rem;
     height: 19.875rem;
+}
+
+iframe {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(46, 46, 46, 1);
+    /* backdrop-filter: blur(10px); */
+    font-family: "SourceHanSansCN-Regular";
 }
