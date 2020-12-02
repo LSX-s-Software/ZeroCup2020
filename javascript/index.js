@@ -25,8 +25,8 @@ window.addEventListener('scroll', () => {
     console.log(scrolled);
     let siders = document.querySelectorAll('.container .screen.s2 .sider');
     let banner = document.querySelector('.banner .span.hidden');
-    let video = document.querySelectorAll('video')[0];
-    let img = document.querySelectorAll('.screen.s2 img')[0];
+    let video = document.querySelectorAll('.screen.s2 .video-section video')[0];
+    let img = document.querySelectorAll('.screen.s2 .video-section img')[0];
     let s3wrapper = document.querySelectorAll('.screen.s3 .wrapper svg');
     let WHRate = 1280 / 720;
     if (scrolled < 2) {
@@ -40,7 +40,6 @@ window.addEventListener('scroll', () => {
     else banner.style.opacity = "1";
     if (scrolled > 2 && scrolled < 3) {
         let width = 747 + (1944 - 747) * (1 - easeInOutCubic(scrolled - 2));
-        // if(width > 728)console.log('!!!' + width);
         video.style.width = width / 18.25 + 'vw';
         img.style.width = width * 1.01 / 18.25 + 'vw';
         img.style.height = width / WHRate * 1.33 / 8.84 + 'vh';
