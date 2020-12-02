@@ -29,6 +29,14 @@ window.addEventListener('scroll', () => {
     let img = document.querySelectorAll('.screen.s2 .video-section img')[0];
     let s3wrapper = document.querySelectorAll('.screen.s3 .wrapper svg');
     let WHRate = 1280 / 720;
+    let sides = document.querySelectorAll('.container .sidebar .side');
+    for(side of sides) {
+        side.classList.remove("colored");
+    }
+    if(scrolled < 1) sides[0].classList.add("colored");
+    if(scrolled > 1 && scrolled < 2) sides[1].classList.add("colored");
+    if(scrolled > 2 && scrolled < 4) sides[2].classList.add("colored");
+    if(scrolled > 4) sides[3].classList.add("colored");
     if (scrolled < 2) {
         banner.style.opacity = "0";
     }

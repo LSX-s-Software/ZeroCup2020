@@ -52,8 +52,34 @@ body {
     width: 100vw;
 }
 
-/* 第一屏 */
+.container .sidebar {
+    position: fixed;
+    z-index: 999;
+    right: 2vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.container .sidebar .side {
+    margin: 1vh;
+    width: 1.1vw;
+    height: 1.1vw;
+    background: #FFFFFF;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.container .sidebar .side.colored {
+    transition: all 1s;
+    background: #C8A06A;
+}
+
+
+/* 第一屏 */
+/* 18.25 * 8.84 */
 .container .screen {
     height: 100vh;
     width: 100vw;
@@ -89,7 +115,6 @@ body {
 
 /* 第二屏 */
 
-/* 18.25 * 8.84 */
 
 .banner {
     z-index: 10;
@@ -213,7 +238,8 @@ body {
     height: 3.5rem;
 }
 
-.swiper-container, .mask {
+.swiper-container,
+.mask {
     display: none;
     width: 80vw;
     height: 116vh;
@@ -244,7 +270,8 @@ body {
     font-family: "HYShangWeiShouShuW-Regular";
 }
 
-.mask h1, .mask h3 {
+.mask h1,
+.mask h3 {
     width: 100%;
     display: inline-flex;
     text-shadow: 2px 2px 4px #121212;
@@ -263,7 +290,8 @@ body {
     margin-top: 1.125rem;
 }
 
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
     position: relative;
 }
 
