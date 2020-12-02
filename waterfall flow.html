@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <title>瀑布流</title>
+    <link rel="stylesheet" type="text/css" href="waterfall flow.css">
+    <style type="text/css">
+    </style>
+    <script src="jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script src="masonry-master/dist/masonry.pkgd.js"></script>
+    <script src="waterfall flow.js"></script>
+</head>
+
+<body>
+    <div class="top"><span>电子竞技-电竞名人堂</span></div>
+    <div class="main">
+        <div class="main-item">
+            <img class="logo" src="resource/photos/rng.jpg">
+            <div class="main-item-img"><img src="resource/photos/RNG_Uzi_2019_WC.png"></div>
+            <div class="wz">Uzi</div>
+            <ul class="wz data">
+                <li><h3>Uzi(简自豪) 英雄联盟职业选手</h3></li>
+                <li>曾获:2014,2017,2018年度最佳ADC</li>
+                <li>2016,2017年全明星赛SOLO冠军</li>
+                <li>2018年LPL春季赛冠军 2018年LPL夏季赛冠军 </li>
+                <li>2018年季中冠军赛冠军 2018年LOL洲际赛冠军</li>
+                <li>2018年雅加达亚运会英雄联盟项目冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/IG.png">
+            <div class="main-item-img"><img src="resource/photos/jackeylove.png"></div>
+            <div class="wz">Jackeylove</div>
+            <ul class="wz data">
+                <li><h3>JackeyLove(喻文波) 英雄联盟职业选手</h3></li>
+                <li>曾获:2018年度最佳新秀选手</li>
+                <li>2018英雄联盟全球总决赛冠军</li>
+                <li>2018年德玛西亚杯冠军</li>
+                <li>2020英雄联盟季中杯冠军</li>
+                <li>2019年LPL春季赛冠军 2020年LPL夏季赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <div class="main-item-img"><img src="resource/photos/karsa.png"></div>
+            <img class="logo" src="resource/photos/rng.jpg">
+            <div class="wz">Karsa</div>
+            <ul class="wz data">
+                <li><h3>Karsa(洪浩轩) 英雄联盟职业选手</h3></li>
+                <li>曾获:2015年IEM台北站冠军 2016年LMS春季赛冠军</li>
+                <li>2016年LMS夏季赛冠军 2017年LMS春季赛冠军</li>
+                <li>2017年LMS夏季赛冠军 2018年LPL春季赛冠军</li>
+                <li>2018年MSI季中邀请赛冠军</li>
+                <li>2018年德玛西亚杯珠海站冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/Edg.png">
+            <div class="main-item-img"><img src="resource/photos/明凯.png"></div>
+            <div class="wz">Clearlove</div>
+            <ul class="wz data">
+                <li><h3>Clearlove(明凯) 英雄联盟职业选手</h3></li>
+                <li>曾获:2012年IPL5冠军 2014年LPL春季赛冠军</li>
+                <li>2014年LPL夏季赛冠军 2015年LPL春季赛冠军</li>
+                <li>2016年LPL夏季赛冠军 2017年LPL夏季赛冠军</li>
+                <li>2015年季中冠军赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <div class="main-item-img"><img src="resource/photos/moon.png"></div>
+            <div class="wz">Moon</div>
+            <ul class="wz data">
+                <li><h3>Moon(张宰怙) 魔兽争霸3职业选手</h3></li>
+                <li>曾获:WEG2005年第一赛季冠军</li>
+                <li>IEST2006年世界总决赛冠军</li>
+                <li>IEST2007年世界总决赛冠军</li>
+                <li>2011年IEF世界总决赛冠军</li>
+                <li>2018年黄金联赛冬季总决赛《魔兽争霸3》冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <div class="main-item-img"><img src="resource/photos/mlxg.png"></div>
+            <img class="logo" src="resource/photos/rng.jpg">
+            <div class="wz">Mlxg</div>
+            <ul class="wz data">
+                <li><h3>Mlxg(刘世宇) 英雄联盟职业选手</h3></li>
+                <li>曾获:2014年全国电子竞技大赛冠军</li>
+                <li>2014年LSPL夏季赛冠军 2016年LPL春季赛冠军</li>
+                <li>2018年获得MSI季中赛冠军</li>
+                <li>2018英雄联盟春季赛冠军</li>
+                <li>2018英雄联盟夏季赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/IG.png">
+            <div class="main-item-img"><img src="resource/photos/the shy.png"></div>
+            <div class="wz">The shy</div>
+            <ul class="wz data">
+                <li><h3>The shy(姜承録) 英雄联盟职业选手</h3></li>
+                <li>曾获:2019年LPL春季赛总决赛MVP</li>
+                <li>2018年度最受欢迎选手 2019年度最受欢迎选手</li>
+                <li>2018年亚洲对抗赛冠军</li>
+                <li>2018年英雄联盟全球总决赛冠军</li>
+                <li>2019年LPL春季赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/rng.jpg">
+            <div class="main-item-img"><img src="resource/photos/xiaohu.png"></div>
+            <div class="wz">xiaohu</div>
+            <ul class="wz data">
+                <li><h3>xiaohu(李元浩) 英雄联盟职业选手</h3></li>
+                <li>曾获:2016年LPL春季赛冠军</li>
+                <li>2016年LPL最佳中单</li>
+                <li>2018年LPL春季赛冠军 2018年LPL夏季赛冠军</li>
+                <li>2018年获得MSI季中赛冠军 2018年德玛西亚杯冠军</li>
+                <li>2018年洲际赛冠军 2019年德玛西亚杯冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/rng.jpg">
+            <div class="main-item-img"><img src="resource/photos/ming.png"></div>
+            <div class="wz">ming</div>
+            <ul class="wz data">
+                <li><h3>ming(史森明) 英雄联盟职业选手</h3></li>
+                <li>曾获:2017年LPL年度最佳新人</li>
+                <li>2017年年度新锐电竞选手</li>
+                <li>2017年德玛西亚杯长沙站冠军</li>
+                <li>2018年LPL春季赛冠军 2018年LPL夏季赛冠军</li>
+                <li>2018年获得MSI季中赛冠军 2018年德玛西亚杯冠军</li>
+                <li>2018年洲际赛冠军 2018年雅加达亚运会冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <div class="main-item-img"><img src="resource/photos/N0tail.png"></div>
+            <div class="wz">NOtail</div>
+            <ul class="wz data">
+                <li><h3>Johan Sundstein N0tail Dota2职业选手</h3></li>
+                <li>曾获:2016年波士顿特级锦标赛冠军</li>
+                <li>2016年ESL ONE法兰克福联赛冠军</li>
+                <li>2017年基辅特锦赛冠军</li>
+                <li>2018年Dota2国际邀请赛冠军</li>
+                <li>2019年Dota2国际邀请赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <div class="main-item-img"><img src="resource/photos/300px-Dynasty_zunba.png"></div>
+            <div class="wz">Zunba</div>
+            <ul class="wz data">
+                <li><h3>zunba(김준혁) 守望先锋职业选手</h3></li>
+                <li>曾获:</li>
+                <li>2016年第一届守望先锋世界杯冠军</li>
+                <li>2017年第二届守望先锋世界杯冠军</li>
+                <li></li>
+                <li></li>
+            </ul>
+            
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/SKT.png">
+            <div class="main-item-img"><img src="resource/photos/SKT_Faker_2019_Split_2.png"></div>
+            <div class="wz">Faker</div>
+            <ul class="wz data">
+                <li><h3>Faker（李相赫）英雄联盟职业选手</h3></li>
+                <li>曾获:2015年LCK夏季赛冠军 2016年LCK春季赛冠军</li>
+                <li>2017年LCK春季赛冠军 2019年LCK春季赛冠军</li>
+                <li>2016年季中冠军赛冠军 2017年季中冠军赛冠军</li>
+                <li>2013年英雄联盟世界总决赛冠军 2014年英雄联盟世界总决赛冠军</li>
+                <li>2015年英雄联盟世界总决赛冠军 2016英雄联盟世界总决赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <div class="main-item-img"><img src="resource/photos/sky.png"></div>
+            <div class="wz">SKY</div>
+            <ul class="wz data">
+                <li><h3>SKY(李晓峰) 魔兽争霸职业选手</h3></li>
+                <li>曾获:</li>
+                <li>2005WCG世界总决赛冠军</li>
+                <li>2006WCG世界总决赛冠军</li>
+                <li>2012WCG中国区总决赛冠军</li>
+                <li>2008年北京奥运会火炬手</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/TSM.png">
+            <div class="main-item-img"><img src="resource/photos/TSM_Doublelift_2020_Split_2.png"></div>
+            <div class="wz">Doublelift</div>
+            <ul class="wz data">
+                <li><h3>Doublelift(彭亦亮) 英雄联盟职业选手</h3></li>
+                <li>曾获:2015年LCS夏季赛冠军</li>
+                <li>2016年LCS夏季赛冠军 2017年LCS夏季赛冠军</li>
+                <li>2018年LCS春季赛冠军 2018年LCS夏季赛冠军</li>
+                <li>2019年LCS春季赛冠军 2019年LCS夏季赛冠军</li>
+                <li>2020年LCS夏季赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/WE.png">
+            <div class="main-item-img"><img src="resource/photos/Weixiao.png"></div>
+            <div class="wz">WeiXiao</div>
+            <ul class="wz data">
+                <li><h3>Weixiao(高学成) 英雄联盟职业选手</h3></li>
+                <li>曾获:2015年LCS夏季赛冠军</li>
+                <li>2012年WGT冠军 2012年IEF总冠军</li>
+                <li>2012年SWL冠军 2012年G联赛总决赛冠军</li>
+                <li>2012年IPL5世界总决赛冠军 2012年TGA冠军</li>
+                <li>2022年WEM赛事冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <div class="main-item-img"><img src="resource/photos/Dynasty_Miro.png"></div>
+            <div class="wz">Miro</div>
+            <ul class="wz data">
+                <li><h3>Miro(공진혁) 守望先锋职业选手</h3></li>
+                <li>曾获:</li>
+                <li>2016年第一届守望先锋世界杯冠军</li>
+                <li>2016年守望先锋世界杯总决赛冠军</li>
+                <li>守望先锋APEX第2赛季冠军</li>
+                <li>守望先锋APEX第3赛季冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <div class="main-item-img"><img src="resource/photos/Excelsior_JJoNak.png"></div>
+            <div class="wz">JJonak</div>
+            <ul class="wz data">
+                <li><h3>JJoNak(방성현) 守望先锋职业选手</h3></li>
+                <li>曾获:</li>
+                <li>守望先锋 世界最强“禅雅塔”</li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/FPX.png">
+            <div class="main-item-img"><img src="resource/photos/FPX_Doinb_2020_Split_1.png"></div>
+            <div class="wz">Doinb</div>
+            <ul class="wz data">
+                <li><h3>Doinb(金泰相) 英雄联盟职业选手</h3></li>
+                <li>曾获:2017年LPL春季赛常规MVP</li>
+                <li>2019年LPL春季赛常规MVP</li>
+                <li>2015年LSPL春季赛冠军 2016年LSPL夏季赛冠军</li>
+                <li>2018年洲际对抗赛冠军 2019年LPL夏季赛冠军</li>
+                <li>2019年英雄联盟世界总决赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <div class="main-item-img"><img src="resource/photos/kuroky.png"></div>
+            <div class="wz">Kuroky</div>
+            <ul class="wz data">
+                <li><h3>Kuro Takhasomi KuroKy Dota2职业选手</h3></li>
+                <li>曾获:2016年震中杯冠军 2017年震中杯冠军</li>
+                <li>2016年华硕ROG梦幻联赛冠军 2017年华硕ROG梦幻联赛冠军</li>
+                <li>2017年Dota2国际邀请赛冠军 2018年中国DOTA2超级锦标赛冠军</li>
+                <li>2017年AMD蓝宝石DOTA PIT深渊联赛冠军</li>
+                <li>2018年StarLadder i-联赛邀请赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/FPX.png">
+            <div class="main-item-img"><img src="resource/photos/FPX_Tian_2020_Split_2.png"></div>
+            <div class="wz">Tian</div>
+            <ul class="wz data">
+                <li><h3>Tian(高天亮) 英雄联盟职业选手</h3></li>
+                <li>曾获:2020年人民电竞 · 中国电竞选手名人堂</li>
+                <li>2019年英雄联盟全球总决赛FMVP</li>
+                <li>2019年度最佳打野</li>
+                <li>2019年LPL夏季赛冠军</li>
+                <li>2019年英雄联盟世界总决赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/IG.png">
+            <div class="main-item-img"><img src="resource/photos/IG_Ning_2020_Split_2.png"></div>
+            <div class="wz">Ning</div>
+            <ul class="wz data">
+                <li><h3>Ning(高振宁) 英雄联盟职业选手</h3></li>
+                <li>曾获:2017年全国电子竞技大赛冠军</li>
+                <li>2018年英雄联盟全球总决赛FMVP</li>
+                <li>2018年德玛西亚杯冬季赛冠军</li>
+                <li>2019年LPL春季赛冠军</li>
+                <li>2018年英雄联盟世界总决赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/IG.png">
+            <div class="main-item-img"><img src="resource/photos/IG_Rookie_2020_Split_1.png"></div>
+            <div class="wz">Rookie</div>
+            <ul class="wz data">
+                <li><h3>Rookie(宋义进) 英雄联盟职业选手</h3></li>
+                <li>曾获:2014年OGN夏季赛冠军</li>
+                <li>2018年度最佳中单选手 2018年度最佳外援</li>
+                <li>2018年德玛西亚杯冬季赛冠军</li>
+                <li>2019年LPL春季赛冠军</li>
+                <li>2018年英雄联盟世界总决赛冠军</li>
+            </ul>
+        </div>
+        <div class="main-item">
+            <img class="logo" src="resource/photos/rng.jpg">
+            <div class="main-item-img"><img src="resource/photos/letme.png"></div>
+            <div class="wz">Letme</div>
+            <ul class="wz data">
+                <li><h3>Letme(严君泽) 英雄联盟职业选手</h3></li>
+                <li>曾获:2013年网吧全国大奖赛冠军</li>
+                <li>2014年全国电子竞技大赛六月总冠军</li>
+                <li>2014年全国电子竞技大赛七月总冠军</li>
+                <li>2018年LPL春季赛冠军 2018年LPL夏季赛冠军</li>
+                <li>2018年MSI季中邀请赛冠军 2018年雅加达亚运会冠军</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
