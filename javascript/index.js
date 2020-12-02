@@ -1,4 +1,13 @@
-
+const GAME_DATA = {
+    single: [{
+        name: "游戏名称",
+        des: "游戏介绍"
+    }],
+    online: [{
+        name: "游戏名称",
+        des: "游戏介绍"
+    }]
+}
 top = ['210vh', 'calc(210vh + 253px)', 'calc(210vh + 506px)', 'calc(210vh)', 'calc(210vh + 253px)', 'calc(210vh + 506px)'];
 
 left = ['234px', '144px', '218px'];
@@ -30,13 +39,13 @@ window.addEventListener('scroll', () => {
     let s3wrapper = document.querySelectorAll('.screen.s3 .wrapper svg');
     let WHRate = 1280 / 720;
     let sides = document.querySelectorAll('.container .sidebar .side');
-    for(side of sides) {
+    for (side of sides) {
         side.classList.remove("colored");
     }
-    if(scrolled < 1) sides[0].classList.add("colored");
-    if(scrolled > 1 && scrolled < 2) sides[1].classList.add("colored");
-    if(scrolled > 2 && scrolled < 4) sides[2].classList.add("colored");
-    if(scrolled > 4) sides[3].classList.add("colored");
+    if (scrolled < 1) sides[0].classList.add("colored");
+    if (scrolled > 1 && scrolled < 2) sides[1].classList.add("colored");
+    if (scrolled > 2 && scrolled < 4) sides[2].classList.add("colored");
+    if (scrolled > 4) sides[3].classList.add("colored");
     if (scrolled < 2) {
         banner.style.opacity = "0";
     }
@@ -106,7 +115,23 @@ $(document).ready(function () {
     });
     mySwiper.on('slideChange', function () {
         console.log(mySwiper.realIndex);
-        //这里写切换游戏介绍的代码
+        if (status[0]) {
+            if (mySwiper.realIndex > GAME_DATA.single.length) {
+                $("#gameName").text(GAME_DATA.single[0].name);
+                $("#gameDes").text(GAME_DATA.single[0].des);
+            } else {
+                $("#gameName").text(GAME_DATA.single[mySwiper.realIndex + 1].name);
+                $("#gameDes").text(GAME_DATA.single[mySwiper.realIndex + 1].des);
+            }
+        } else if (status[1]) {
+            if (mySwiper.realIndex > GAME_DATA.online.length) {
+                $("#gameName").text(GAME_DATA.online[0].name);
+                $("#gameDes").text(GAME_DATA.online[0].des);
+            } else {
+                $("#gameName").text(GAME_DATA.online[mySwiper.realIndex + 1].name);
+                $("#gameDes").text(GAME_DATA.online[mySwiper.realIndex + 1].des);
+            }
+        }
     });
     var status = [false, false];
     $("#more1").click(function (e) {
@@ -118,6 +143,8 @@ $(document).ready(function () {
             $("#warpper1").css({
                 transform: "translate(-20%,-20%)"
             });
+            $("#gameName").text(GAME_DATA.single[0].name);
+            $("#gameDes").text(GAME_DATA.single[0].des);
         } else {
             $(".swiper-container").fadeOut();
             $(".mask").fadeOut();
@@ -125,6 +152,8 @@ $(document).ready(function () {
             $("#warpper1").css({
                 transform: "none"
             });
+            $("#gameName").text(GAME_DATA.online[0].name);
+                $("#gameDes").text(GAME_DATA.online[0].des);
         }
         status[0] = !status[0];
     });
@@ -167,7 +196,7 @@ $(document).ready(function () {
         }
         status[1] = !status[1];
     });
-    $("#hof").click(function (e) { 
+    $("#hof").click(function (e) {
         e.preventDefault();
         $("#waterflow").fadeIn();
         $(".closeBtn").fadeIn();
@@ -175,7 +204,7 @@ $(document).ready(function () {
         $("#b2").text("名人堂");
         $(".sidebar").css("filter", "blur(15px)");
     });
-    $("#tl").click(function (e) { 
+    $("#tl").click(function (e) {
         e.preventDefault();
         $("#timeline").fadeIn();
         $(".closeBtn").fadeIn();
@@ -183,7 +212,7 @@ $(document).ready(function () {
         $("#b2").text("大事记");
         $(".sidebar").css("filter", "blur(15px)");
     });
-    $(".closeBtn").click(function (e) { 
+    $(".closeBtn").click(function (e) {
         e.preventDefault();
         $(".sidebar").css("filter", "none");
         $("#waterflow").fadeOut();
