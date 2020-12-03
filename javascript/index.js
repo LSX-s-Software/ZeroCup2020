@@ -46,15 +46,18 @@ window.addEventListener('scroll', () => {
     if (scrolled > 1 && scrolled < 2) sides[1].classList.add("colored");
     if (scrolled > 2 && scrolled < 4) sides[2].classList.add("colored");
     if (scrolled > 4) sides[3].classList.add("colored");
-    if (scrolled < 2) {
-        banner.style.opacity = "0";
+    if (scrolled > 0.75) $("#warpper1,#warpper2").css("opacity", 1);
+    if (scrolled > 0.9) $(".container .screen.s2 .wrapper .btn").css("opacity", 1);
+    if (scrolled >= 1) {
+        $(".banner").css("opacity", 1);
+    } else {
+        $(".banner").css("opacity", 0);
     }
     if (scrolled < 2) {
         video.style.width = 1944 / 18.25 + 'vw';
         img.style.width = 1963 / 18.25 + 'vw';
         img.style.height = 1454 / 8.84 + 'vh';
     }
-    else banner.style.opacity = "1";
     if (scrolled > 2 && scrolled < 3) {
         let width = 747 + (1944 - 747) * (1 - easeInOutCubic(scrolled - 2));
         video.style.width = width / 18.25 + 'vw';
@@ -89,7 +92,23 @@ window.addEventListener('scroll', () => {
 })
 
 $(document).ready(function () {
-    $(".promote").fadeIn(1000);
+    $("#s1bgImg").fadeIn(500, function () {
+        $("#s1l1").css({
+            opacity: 1,
+            transform: "none"
+        });
+        $("#s1l2").css({
+            opacity: 1,
+            transform: "none"
+        });
+        $("#s1l3").css({
+            opacity: 1,
+            transform: "none"
+        });
+        setTimeout(() => {
+            $(".promote").fadeIn(2000);
+        }, 1500);
+    });
     setInterval(function () {
         $(".promote").animate({ bottom: "+=50px" }, { duration: 2000 }).queue(function (next) {
             $(".promote").fadeOut(function () { $(".promote").css("bottom", "0"); });
