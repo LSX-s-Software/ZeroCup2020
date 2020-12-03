@@ -103,8 +103,8 @@ body {
 .logo {
   position: absolute;
   width: 15%;
-  top: -1%;
-  left: -1%;
+  top: -0.5%;
+  left: -0.5%;
   transform: translateY(0);
 }
 
