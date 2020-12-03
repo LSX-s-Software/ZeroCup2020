@@ -139,6 +139,12 @@ window.addEventListener('scroll', () => {
 })
 
 $(document).ready(function () {
+    var myVue = new Vue({
+        el: ".swiper-container",
+        data: {
+            b: 0
+        }
+    })
     $("#s1bgImg").fadeIn(500, function () {
         $("#s1l1").css({
             opacity: 1,
@@ -209,6 +215,7 @@ $(document).ready(function () {
     $("#more1").click(function (e) {
         e.preventDefault();
         let line = document.querySelector('.container .screen.s2 .wrapper .skew');
+        myVue.b = 0;
         if (!status[0]) {
             line.style.transform = "translate(-20vw,0)";
             $(".swiper-container").fadeIn();
@@ -217,8 +224,8 @@ $(document).ready(function () {
             $("#warpper1").css({
                 transform: "translate(-20%,-20%)"
             });
-            $("#gameName").text(GAME_DATA.single[0].name);
-            $("#gameDes").text(GAME_DATA.single[0].des);
+            $("#gameName").text(GAME_DATA.single[1].name);
+            $("#gameDes").text(GAME_DATA.single[1].des);
         } else {
             line.style.transform = "translate(0px,0)";
             $(".swiper-container").fadeOut();
@@ -227,17 +234,18 @@ $(document).ready(function () {
             $("#warpper1").css({
                 transform: "none"
             });
-            $("#gameName").text(GAME_DATA.online[0].name);
-            $("#gameDes").text(GAME_DATA.online[0].des);
         }
         status[0] = !status[0];
     });
     $("#more2").click(function (e) {
         e.preventDefault();
         let line = document.querySelector('.container .screen.s2 .wrapper .skew');
+        myVue.b = 6;
         if (!status[1]) {
             line.style.transform = "translate(19vw,0)";
             $(".swiper-container").fadeIn();
+            $("#gameName").text(GAME_DATA.online[1].name);
+            $("#gameDes").text(GAME_DATA.online[1].des);
             $(".mask").css("display", "flex");
             $(".mask h3").css("padding-right", "15%");
             $(".swiper-container").css({

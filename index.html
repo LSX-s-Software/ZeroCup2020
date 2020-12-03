@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./javascript/swiper/dist/css/swiper.min.css">
     <script src="./javascript/swiper/dist/js/swiper.min.js"></script>
     <link rel="stylesheet" href="./css/index.css">
+    <script src="./javascript/vue.js"></script>
     <script src="./javascript/index.js"></script>
 </head>
 
@@ -86,42 +87,23 @@
                 <!-- Slider main container -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <!-- Slides -->
                         <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/1.jpg" alt=""></div>
+                            <div class="skew-fix"><img v-bind:src='"./source/img/game/" + (b+1) + ".jpg"' alt=""></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/2.jpg" alt=""></div>
+                            <div class="skew-fix"><img v-bind:src='"./source/img/game/" + (b+2) + ".jpg"' alt=""></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/3.jpg" alt=""></div>
+                            <div class="skew-fix"><img v-bind:src='"./source/img/game/" + (b+3) + ".jpg"' alt=""></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/4.jpg" alt=""></div>
+                            <div class="skew-fix"><img v-bind:src='"./source/img/game/" + (b+4) + ".jpg"' alt=""></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/5.jpg" alt=""></div>
+                            <div class="skew-fix"><img v-bind:src='"./source/img/game/" + (b+5) + ".jpg"' alt=""></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/6.jpg" alt=""></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/7.jpg" alt=""></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/8.jpg" alt=""></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/9.jpg" alt=""></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/10.jpg" alt=""></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/11.jpg" alt=""></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="skew-fix"><img src="./source/img/game/12.jpg" alt=""></div>
+                            <div class="skew-fix"><img v-bind:src='"./source/img/game/" + (b+6) + ".jpg"' alt=""></div>
                         </div>
                     </div>
                 </div>
