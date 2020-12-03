@@ -194,7 +194,7 @@ body {
     background-color: rgba(27, 27, 27, 1);
 }
 
-.container .screen.s2 #wrapper1 {
+.container .screen.s2 #warpper1 {
     /* animation: flashin1 1s; */
     position: relative;
 }
@@ -211,7 +211,7 @@ body {
     }
 }
 
-.container .screen.s2 #wrapper2 {
+.container .screen.s2 #warpper2 {
     /* animation: flashin2 1s; */
     position: relative;
 }

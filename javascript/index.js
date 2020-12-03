@@ -89,9 +89,9 @@ window.addEventListener('scroll', () => {
     if (scrolled > 1 + 3 / 4 && scrolled < 3 + 3 / 4) sides[2].classList.add("colored");
     if (scrolled > 3 + 3 / 4) sides[3].classList.add("colored");
     if (scrolled > 0.75) {
-        $("#wrapper1,#wrapper2").css("opacity", 1);
-        $("#wrapper1").css("animation", "flashin1 1s");
-        $("#wrapper2").css("animation", "flashin2 1s");
+        $("#warpper1,#warpper2").css("opacity", 1);
+        $("#warpper1").css("animation", "flashin1 1s");
+        $("#warpper2").css("animation", "flashin2 1s");
         $(".skew .line").fadeIn();
     }
     if (scrolled > 1.75) {
