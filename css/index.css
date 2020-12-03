@@ -49,7 +49,7 @@ body {
 
 .container {
     background-color: rgba(27, 27, 27, 1);
-    height: 1000vh;
+    height: 400vh;
     width: 100vw;
 }
 
@@ -138,6 +138,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
+
 .promote p {
     margin: 0;
     font-size: 13px;
@@ -248,6 +249,7 @@ body {
 }
 
 .container .screen.s2 .wrapper .skew {
+    z-index: -1;
     width: 26.5vw;
     height: 113vh;
     opacity: 0.5;
@@ -259,9 +261,9 @@ body {
 
 .container .screen.s2 .wrapper .skew .line {
     width: 0.22vw;
-    height: 101vh;
+    height: 110vh;
     background-color: #fff;
-    transform: rotate(25deg);
+    transform: rotate(20deg);
     transition: transform 500ms;
     display: none;
 }

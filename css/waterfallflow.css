@@ -41,6 +41,10 @@ body {
   flex-grow: 0;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .main-item-img {
   width: 100%;
   margin-top: 14px;
@@ -121,6 +125,7 @@ body {
 }
 
 .main-item:hover {
+    transition: all 0.5s;
   transform: translateY(-10px);
   background-color: #707070;
 }

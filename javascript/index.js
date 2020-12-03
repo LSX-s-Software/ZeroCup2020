@@ -42,11 +42,11 @@ window.addEventListener('scroll', () => {
     for (side of sides) {
         side.classList.remove("colored");
     }
-    if (scrolled < 1) sides[0].classList.add("colored");
-    if (scrolled > 1 && scrolled < 2) sides[1].classList.add("colored");
-    if (scrolled > 2 && scrolled < 4) sides[2].classList.add("colored");
-    if (scrolled > 4) sides[3].classList.add("colored");
-    if (scrolled > 0.75) {
+    if (scrolled < 3 / 4) sides[0].classList.add("colored");
+    if (scrolled > 3 / 4 && scrolled < 1 + 3 / 4) sides[1].classList.add("colored");
+    if (scrolled > 1 + 3 / 4 && scrolled < 3 + 3 / 4) sides[2].classList.add("colored");
+    if (scrolled > 3 + 3 / 4) sides[3].classList.add("colored");
+    if (scrolled > 0.75) { 
         $("#warpper1,#warpper2").css("opacity", 1);
         $(".skew .line").fadeIn();
     }
@@ -87,7 +87,7 @@ window.addEventListener('scroll', () => {
             item.style.opacity = "0";
         }
     }
-    if (scrolled > 4) {
+    if (scrolled > 3.7) {
         for (item of s3wrapper) {
             item.style.opacity = "1";
         }
@@ -113,8 +113,14 @@ $(document).ready(function () {
         }, 1500);
     });
     setInterval(function () {
-        $(".promote").animate({ bottom: "+=50px" }, { duration: 2000 }).queue(function (next) {
-            $(".promote").fadeOut(function () { $(".promote").css("bottom", "0"); });
+        $(".promote").animate({
+            bottom: "+=50px"
+        }, {
+            duration: 2000
+        }).queue(function (next) {
+            $(".promote").fadeOut(function () {
+                $(".promote").css("bottom", "0");
+            });
             next();
         }).queue(function (next) {
             $(".promote").fadeIn();
@@ -158,7 +164,9 @@ $(document).ready(function () {
     var status = [false, false];
     $("#more1").click(function (e) {
         e.preventDefault();
+        let line = document.querySelector('.container .screen.s2 .wrapper .skew');
         if (!status[0]) {
+            line.style.transform = "translate(-20vw,0)";
             $(".swiper-container").fadeIn();
             $(".mask").css("display", "flex");
             $("#more1 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
@@ -168,6 +176,7 @@ $(document).ready(function () {
             $("#gameName").text(GAME_DATA.single[0].name);
             $("#gameDes").text(GAME_DATA.single[0].des);
         } else {
+            line.style.transform = "translate(0px,0)";
             $(".swiper-container").fadeOut();
             $(".mask").fadeOut();
             $("#more1 svg text tspan").html("了解更多");
@@ -175,13 +184,15 @@ $(document).ready(function () {
                 transform: "none"
             });
             $("#gameName").text(GAME_DATA.online[0].name);
-                $("#gameDes").text(GAME_DATA.online[0].des);
+            $("#gameDes").text(GAME_DATA.online[0].des);
         }
         status[0] = !status[0];
     });
     $("#more2").click(function (e) {
         e.preventDefault();
+        let line = document.querySelector('.container .screen.s2 .wrapper .skew');
         if (!status[1]) {
+            line.style.transform = "translate(19vw,0)";
             $(".swiper-container").fadeIn();
             $(".mask").css("display", "flex");
             $(".mask h3").css("padding-right", "15%");
@@ -199,6 +210,7 @@ $(document).ready(function () {
             });
             $("#more2 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
         } else {
+            line.style.transform = "translate(0px,0)";
             $(".swiper-container").fadeOut();
             $(".mask").fadeOut();
             $(".mask h3").css("padding-right", "50%");
