@@ -138,6 +138,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
+
 .promote p {
     margin: 0;
     font-size: 13px;
@@ -267,7 +268,6 @@ body {
 }
 
 .container .screen.s2 .wrapper .btn {
-    z-index: 999;
     position: relative;
     display: flex;
     justify-content: center;
