@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 370vh;
+  height: calc(3.5 * 1080px);
 }
 
 .top span {
@@ -30,6 +30,7 @@ body {
 
 .main-item {
   width: 20%;
+  min-width: 290px;
   break-inside: avoid;
   text-align: center;
   border-radius: 1rem;
