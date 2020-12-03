@@ -194,6 +194,40 @@ body {
     background-color: rgba(27, 27, 27, 1);
 }
 
+.container .screen.s2 #wrapper1 {
+    /* animation: flashin1 1s; */
+    position: relative;
+}
+
+@keyframes flashin1 {
+    0% {
+        top: -100%;
+        left: 40%;
+    }
+
+    100% {
+        top: 0%;
+        left: 0%;
+    }
+}
+
+.container .screen.s2 #wrapper2 {
+    /* animation: flashin2 1s; */
+    position: relative;
+}
+
+@keyframes flashin2 {
+    0% {
+        top: 100%;
+        left: -40%;
+    }
+
+    100% {
+        top: 0%;
+        left: 0%;
+    }
+}
+
 .container .screen.s2 .wrapper {
     background-color: rgba(27, 27, 27, 1);
     position: absolute;
