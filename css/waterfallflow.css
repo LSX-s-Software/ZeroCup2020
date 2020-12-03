@@ -31,7 +31,7 @@ body {
   text-align: center;
   border-radius: 1rem;
   margin-bottom: 20%;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   position: relative;
   background-color: #505050;
 }
@@ -122,6 +122,7 @@ body {
 }
 
 .main-item:hover {
+    transition: all 0.5s;
   transform: translateY(-10px);
   background-color: #707070;
 }

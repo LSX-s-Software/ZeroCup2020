@@ -161,7 +161,9 @@ $(document).ready(function () {
     var status = [false, false];
     $("#more1").click(function (e) {
         e.preventDefault();
+        let line = document.querySelector('.container .screen.s2 .wrapper .skew');
         if (!status[0]) {
+            line.style.transform = "translate(-20vw,0)";
             $(".swiper-container").fadeIn();
             $(".mask").css("display", "flex");
             $("#more1 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
@@ -171,6 +173,7 @@ $(document).ready(function () {
             $("#gameName").text(GAME_DATA.single[0].name);
             $("#gameDes").text(GAME_DATA.single[0].des);
         } else {
+            line.style.transform = "translate(0px,0)";
             $(".swiper-container").fadeOut();
             $(".mask").fadeOut();
             $("#more1 svg text tspan").html("了解更多");
@@ -184,7 +187,9 @@ $(document).ready(function () {
     });
     $("#more2").click(function (e) {
         e.preventDefault();
+        let line = document.querySelector('.container .screen.s2 .wrapper .skew');
         if (!status[1]) {
+            line.style.transform = "translate(19vw,0)";
             $(".swiper-container").fadeIn();
             $(".mask").css("display", "flex");
             $(".mask h3").css("padding-right", "15%");
@@ -202,6 +207,7 @@ $(document).ready(function () {
             });
             $("#more2 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
         } else {
+            line.style.transform = "translate(0px,0)";
             $(".swiper-container").fadeOut();
             $(".mask").fadeOut();
             $(".mask h3").css("padding-right", "50%");

@@ -248,6 +248,7 @@ body {
 }
 
 .container .screen.s2 .wrapper .skew {
+    z-index: -1;
     width: 26.5vw;
     height: 113vh;
     opacity: 0.5;
@@ -259,13 +260,14 @@ body {
 
 .container .screen.s2 .wrapper .skew .line {
     width: 0.22vw;
-    height: 101vh;
+    height: 110vh;
     background-color: #fff;
-    transform: rotate(25deg);
+    transform: rotate(20deg);
     transition: transform 500ms;
 }
 
 .container .screen.s2 .wrapper .btn {
+    z-index: 999;
     position: relative;
     display: flex;
     justify-content: center;
