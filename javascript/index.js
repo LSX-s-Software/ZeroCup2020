@@ -94,6 +94,12 @@ window.addEventListener('scroll', () => {
         $("#warpper1,#warpper2").css("opacity", 1);
         $(".skew .line").fadeIn();
     }
+    if(scrolled > 1.75) {
+        banner.style.opacity = 1;
+    }
+    else {
+        banner.style.opacity = 0;
+    }
     if (scrolled > 0.9) $(".container .screen.s2 .wrapper .btn").css("opacity", 1);
     if (scrolled >= 0.85) {
         $(".banner").css("opacity", 1);

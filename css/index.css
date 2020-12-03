@@ -182,7 +182,8 @@ body {
 }
 
 .span.hidden {
-    margin: 1.58vh 0 0 0;
+    font-size: 2rem;
+    margin: 1.58vh 0 1.58vh 0;
     opacity: 0;
     transition: all 0.5s;
 }
