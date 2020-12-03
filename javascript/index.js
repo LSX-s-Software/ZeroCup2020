@@ -46,9 +46,12 @@ window.addEventListener('scroll', () => {
     if (scrolled > 1 && scrolled < 2) sides[1].classList.add("colored");
     if (scrolled > 2 && scrolled < 4) sides[2].classList.add("colored");
     if (scrolled > 4) sides[3].classList.add("colored");
-    if (scrolled > 0.75) $("#warpper1,#warpper2").css("opacity", 1);
+    if (scrolled > 0.75) {
+        $("#warpper1,#warpper2").css("opacity", 1);
+        $(".skew .line").fadeIn();
+    }
     if (scrolled > 0.9) $(".container .screen.s2 .wrapper .btn").css("opacity", 1);
-    if (scrolled >= 1) {
+    if (scrolled >= 0.85) {
         $(".banner").css("opacity", 1);
     } else {
         $(".banner").css("opacity", 0);
@@ -192,7 +195,7 @@ $(document).ready(function () {
                 width: "50%"
             });
             $("#warpper2").css({
-                transform: "translate(20%,20%)"
+                transform: "translate(25%,25%)"
             });
             $("#more2 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
         } else {

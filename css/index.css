@@ -263,6 +263,7 @@ body {
     background-color: #fff;
     transform: rotate(25deg);
     transition: transform 500ms;
+    display: none;
 }
 
 .container .screen.s2 .wrapper .btn {
@@ -354,7 +355,8 @@ body {
 
 .swiper-slide img {
     outline: none;
-    height: 100vh;
+    min-height: 100%;
+    min-width: 100%;
     position: relative;
     left: -20%;
 }
@@ -496,14 +498,14 @@ video {
 
 iframe {
     width: 85%;
-    height: 92vh;
+    height: calc(100vh - 4.25rem);
     background-color: rgba(46, 46, 46, 1);
     /* backdrop-filter: blur(10px); */
     font-family: "SourceHanSansCN-Regular";
     display: none;
     position: fixed;
     left: 50%;
-    top: 8vh;
+    top: 4.25rem;
     transform: translateX(-50%);
     z-index: 19;
 }
