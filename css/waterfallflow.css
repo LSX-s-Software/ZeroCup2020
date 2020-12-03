@@ -36,6 +36,10 @@ body {
   background-color: #505050;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .main-item-img {
   width: 100%;
   transition: all 0.3s linear;

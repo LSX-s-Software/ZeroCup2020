@@ -42,10 +42,10 @@ window.addEventListener('scroll', () => {
     for (side of sides) {
         side.classList.remove("colored");
     }
-    if (scrolled < 1) sides[0].classList.add("colored");
-    if (scrolled > 1 && scrolled < 2) sides[1].classList.add("colored");
-    if (scrolled > 2 && scrolled < 4) sides[2].classList.add("colored");
-    if (scrolled > 4) sides[3].classList.add("colored");
+    if (scrolled < 3 / 4) sides[0].classList.add("colored");
+    if (scrolled > 3 / 4 && scrolled < 1 + 3 / 4) sides[1].classList.add("colored");
+    if (scrolled > 1 + 3 / 4 && scrolled < 3 + 3 / 4) sides[2].classList.add("colored");
+    if (scrolled > 3 + 3 / 4) sides[3].classList.add("colored");
     if (scrolled > 0.75) $("#warpper1,#warpper2").css("opacity", 1);
     if (scrolled > 0.9) $(".container .screen.s2 .wrapper .btn").css("opacity", 1);
     if (scrolled >= 1) {
@@ -84,7 +84,7 @@ window.addEventListener('scroll', () => {
             item.style.opacity = "0";
         }
     }
-    if (scrolled > 4) {
+    if (scrolled > 3.7) {
         for (item of s3wrapper) {
             item.style.opacity = "1";
         }
@@ -110,8 +110,14 @@ $(document).ready(function () {
         }, 1500);
     });
     setInterval(function () {
-        $(".promote").animate({ bottom: "+=50px" }, { duration: 2000 }).queue(function (next) {
-            $(".promote").fadeOut(function () { $(".promote").css("bottom", "0"); });
+        $(".promote").animate({
+            bottom: "+=50px"
+        }, {
+            duration: 2000
+        }).queue(function (next) {
+            $(".promote").fadeOut(function () {
+                $(".promote").css("bottom", "0");
+            });
             next();
         }).queue(function (next) {
             $(".promote").fadeIn();
@@ -172,7 +178,7 @@ $(document).ready(function () {
                 transform: "none"
             });
             $("#gameName").text(GAME_DATA.online[0].name);
-                $("#gameDes").text(GAME_DATA.online[0].des);
+            $("#gameDes").text(GAME_DATA.online[0].des);
         }
         status[0] = !status[0];
     });
