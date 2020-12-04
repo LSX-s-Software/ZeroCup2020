@@ -1,6 +1,5 @@
 const GAME_DATA = {
-    single: [
-        {
+    single: [{
             name: "《黑神话：悟空》",
             des: "《黑神话：悟空》是一款由游戏科学公司制作的动作角色扮演游戏。游戏以“西游记”为背景，“悟空”为故事主线，还原心玩家中一直存在的东方魔幻世界。"
         }, //第一个为占位符
@@ -29,8 +28,7 @@ const GAME_DATA = {
             des: "《黑神话：悟空》是一款由游戏科学公司制作的动作角色扮演游戏。游戏以“西游记”为背景，“悟空”为故事主线，还原心玩家中一直存在的东方魔幻世界。"
         }
     ],
-    online: [
-        {
+    online: [{
             name: "《原神》",
             des: "《原神》是由上海米哈游制作发行的一款开放世界冒险游戏。游戏发生在一个被称作“提瓦特”的幻想世界，在这里，被神选中的人将被授予“神之眼”，导引元素之力。玩家将扮演一位名为“旅行者”的神秘角色，在自由的旅行中邂逅性格各异、能力独特的同伴们，和他们一起击败强敌，找回失散的亲人——同时，逐步发掘“原神”的真相。"
         },
@@ -134,9 +132,9 @@ window.addEventListener('scroll', () => {
     if (scrolled > 3) {
         let i = 1;
         for (sider of siders) {
-            sider.style.animation = "getin" + i +" 1s";
+            sider.style.animation = "getin" + i + " 1s";
             sider.style.visibility = "visible";
-            console.log("getin" + i +" 1s");
+            console.log("getin" + i + " 1s");
             i += 1;
         }
     }
@@ -285,19 +283,20 @@ $(document).ready(function () {
         } else {
             line.style.transform = "translate(0px,0)";
             $(".swiper-container").fadeOut();
-            $(".mask").fadeOut();
+            $(".mask").fadeOut(() => {
+                $(".mask").css({
+                    left: "auto",
+                    right: "0",
+                    width: "80vw"
+                });
+                $(".swiper-container").css({
+                    left: "auto",
+                    right: "0"
+                });
+            });
             $(".mask h3").css("padding-right", "50%");
             $("#warpper2").css({
                 transform: "none"
-            });
-            $(".mask").css({
-                left: "auto",
-                right: "0",
-                width: "80vw"
-            });
-            $(".swiper-container").css({
-                left: "auto",
-                right: "0"
             });
             $("#more2 svg text tspan").html("了解更多");
         }
