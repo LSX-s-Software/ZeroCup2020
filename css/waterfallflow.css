@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: calc(3.5 * 1080px);
+  height: calc(3.4 * 1080px);
 }
 
 .top span {
@@ -82,12 +82,13 @@ body {
   list-style: none;
 }
 
-.data li:not(.data li:first-child) {
+.data li {
   margin-left: calc(1.75rem + 8px);
 }
 
 .data li:first-child {
   text-align: center;
+  margin-left: 0;
 }
 
 .award {

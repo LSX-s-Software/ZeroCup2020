@@ -246,6 +246,7 @@ $(document).ready(function () {
             $("#gameName").text(GAME_DATA.single[1].name);
             $("#gameDes").text(GAME_DATA.single[1].des);
         } else {
+            mySwiper.slideTo(0, 0);
             line.style.transform = "translate(0px,0)";
             $(".swiper-container").fadeOut();
             $(".mask").fadeOut();
@@ -281,6 +282,7 @@ $(document).ready(function () {
             });
             $("#more2 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
         } else {
+            mySwiper.slideTo(0, 0);
             line.style.transform = "translate(0px,0)";
             $(".swiper-container").fadeOut();
             $(".mask").fadeOut(() => {
@@ -326,5 +328,11 @@ $(document).ready(function () {
         $(".closeBtn").fadeOut();
         $("#b1").text("电子");
         $("#b2").text("竞技");
+    });
+    $(".sider").hover(function(e) {
+        console.log(e);
+        $(".text-view." + e.currentTarget.classList[1]).addClass("hover");
+    }, function(e) {
+        $(".text-view." + e.currentTarget.classList[1]).removeClass("hover");
     });
 });

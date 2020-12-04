@@ -3,7 +3,7 @@ body {
     color: white;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0 10%;
     white-space: nowrap;
     user-select: none;
     margin-top: 10%;
@@ -85,7 +85,7 @@ body {
     width: 40%;
     padding: 2%;
     border-radius: 8px;
-    border-bottom: solid 3px #009ABB;
+    border-bottom: solid 3px #C8A06A;
     float: left;
     opacity: 0;
     position: relative;
