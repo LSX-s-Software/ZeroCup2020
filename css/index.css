@@ -49,7 +49,7 @@ body {
 
 .container {
     background-color: rgba(27, 27, 27, 1);
-    height: 400vh;
+    height: 500vh;
     width: 100vw;
 }
 
@@ -94,7 +94,7 @@ body {
     align-items: center;
 }
 
-.container .screen.s1 .wrapper {
+.screen.s1 .wrapper, .screen.s4 .wrapper {
     display: flex;
     overflow-x: hidden;
     flex-direction: column;
@@ -102,7 +102,7 @@ body {
     align-items: center;
 }
 
-.container .screen.s1 .wrapper .bigger {
+.screen.s1 .wrapper .bigger, .screen.s4 .wrapper .bigger {
     font-family: HYShangWeiShouShuW-Regular;
     color: rgba(200, 160, 106, 1);
     font-size: 6rem;
@@ -111,7 +111,7 @@ body {
     transition: all ease-out 0.7s;
 }
 
-.container .screen.s1 .wrapper .smaller {
+.screen.s1 .wrapper .smaller, .screen.s4 .wrapper .smaller {
     font-family: HYShangWeiShouShuW-Regular;
     color: rgba(255, 255, 255, 1);
     font-size: 4.5rem;
