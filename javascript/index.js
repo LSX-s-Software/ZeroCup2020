@@ -122,13 +122,18 @@ window.addEventListener('scroll', () => {
         img.style.height = 558 / 8.84 + 'vh';
     }
     if (scrolled > 3) {
+        let i = 1;
         for (sider of siders) {
-            sider.style.opacity = 1;
+            sider.style.animation = "getin" + i +" 1s";
+            sider.style.visibility = "visible";
+            console.log("getin" + i +" 1s");
+            i += 1;
         }
     }
-    if (scrolled < 2.95) {
+    if (scrolled < 2.5) {
         for (sider of siders) {
-            sider.style.opacity = 0;
+            sider.style.visibility = "hidden";
+            sider.style.animation = "";
         }
     }
     if (scrolled < 4) {

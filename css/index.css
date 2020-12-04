@@ -461,56 +461,156 @@ video {
 }
 
 .sider {
-    opacity: 0;
     width: 13.2rem;
     height: 11.4375rem;
+    visibility: hidden;
+}
+
+.siderS {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 200vh;
+    left: 0;
+    transform: translateY(0px);
 }
 
 .sd1 {
-    position: absolute;
-    top: 210vh;
+    position: fixed;
+    top: 20vh;
     left: 12.8vw;
     transition: all 1s;
-    /* transition-delay: s; */
+}
+
+@keyframes getin1 {
+    0% {
+        left: -10vh;
+        top: -10vw;
+        width: 0rem;
+        height: 0rem;
+    }
+
+    100% {
+        top: 20vh;
+        left: 12.8vw;
+        width: 13.2rem;
+        height: 11.4375rem;
+    }
 }
 
 .sd2 {
-    position: absolute;
-    top: calc(210vh + 28.6vh);
+    position: fixed;
+    top: calc(20vh + 28.6vh);
     left: 7.9vw;
     transition: all 1s;
-    transition-delay: 0.5s;
+}
+
+@keyframes getin2 {
+    0% {
+        top: 48.6vh;
+        left: -10vw;
+        width: 0rem;
+        height: 0rem;
+    }
+
+    100% {
+        top: 48.6vh;
+        left: 7.9vw;
+        width: 13.2rem;
+        height: 11.4375rem;
+    }
 }
 
 .sd3 {
-    position: absolute;
-    top: calc(210vh + 57.2vh);
+    position: fixed;
+    top: calc(20vh + 57.2vh);
     left: 12vw;
     transition: all 1s;
-    transition-delay: 1s;
+}
+
+@keyframes getin3 {
+    0% {
+        top: 97.2vh;
+        left: -10vw;
+        width: 0rem;
+        height: 0rem;
+    }
+
+    100% {
+        top: 77.2vh;
+        left: 12vw;
+        width: 13.2rem;
+        height: 11.4375rem;
+    }
 }
 
 .sd4 {
-    position: absolute;
-    top: calc(210vh);
+    position: fixed;
+    top: calc(20vh);
     right: 12.8vw;
     transition: all 1s;
 }
 
+@keyframes getin4 {
+    0% {
+        top: -10vh;
+        right: -10vw;
+        width: 0rem;
+        height: 0rem;
+    }
+
+    100% {
+        top: 20vh;
+        right: 12.8vw;
+        width: 13.2rem;
+        height: 11.4375rem;
+    }
+}
+
 .sd5 {
-    position: absolute;
-    top: calc(210vh + 28.6vh);
+    position: fixed;
+    top: calc(20vh + 28.6vh);
     right: 7.9vw;
     transition: all 1s;
-    transition-delay: 0.5s;
+}
+
+@keyframes getin5 {
+    0% {
+        top: 48.6vh;
+        right: -10vw;
+        width: 0rem;
+        height: 0rem;
+    }
+
+    100% {
+        top: 48.6vh;
+        right: 7.9vw;
+        width: 13.2rem;
+        height: 11.4375rem;
+    }
 }
 
 .sd6 {
-    position: absolute;
-    top: calc(210vh + 57.2vh);
+    position: fixed;
+    top: calc(20vh + 57.2vh);
     right: 12vw;
     transition: all 1s;
-    transition-delay: 1s;
+}
+
+@keyframes getin6 {
+    0% {
+        top: 97.2vh;
+        right: -10vw;
+        width: 0rem;
+        height: 0rem;
+    }
+
+    100% {
+        top: 77.2vh;
+        right: 12vw;
+        width: 13.2rem;
+        height: 11.4375rem;
+    }
 }
 
 .screen.s3 {
