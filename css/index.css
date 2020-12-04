@@ -387,7 +387,7 @@ body {
 
 .swiper-slide {
     overflow: hidden;
-    width: 40%;
+    width: 0% !important;
     transition: width ease-out 0.5s, filter ease-out 0.5s;
 }
 
@@ -396,7 +396,7 @@ body {
     min-height: 100%;
     min-width: 100%;
     position: relative;
-    left: -20%;
+    left: -30%;
 }
 
 .swiper-slide-prev {

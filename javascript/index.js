@@ -1,5 +1,10 @@
 const GAME_DATA = {
-    single: [{
+    single: [
+        {
+            name: "《黑神话：悟空》",
+            des: "《黑神话：悟空》是一款由游戏科学公司制作的动作角色扮演游戏。游戏以“西游记”为背景，“悟空”为故事主线，还原心玩家中一直存在的东方魔幻世界。"
+        }, //第一个为占位符
+        {
             name: "《塞尔达传说 旷野之息》",
             des: "《塞尔达传说 旷野之息》是一款由任天堂开发的动作冒险游戏，玩家在游戏中扮演重伤复苏的骑士林克，踏上打败邪恶的古老恶魔——灾厄盖侬，拯救公主的道路。塞尔达在任天堂Switch上首发后，获得了业界的极高评价，多家媒体给予本作满分，并获得多个年度游戏奖项。"
         },
@@ -24,7 +29,12 @@ const GAME_DATA = {
             des: "《黑神话：悟空》是一款由游戏科学公司制作的动作角色扮演游戏。游戏以“西游记”为背景，“悟空”为故事主线，还原心玩家中一直存在的东方魔幻世界。"
         }
     ],
-    online: [{
+    online: [
+        {
+            name: "《原神》",
+            des: "《原神》是由上海米哈游制作发行的一款开放世界冒险游戏。游戏发生在一个被称作“提瓦特”的幻想世界，在这里，被神选中的人将被授予“神之眼”，导引元素之力。玩家将扮演一位名为“旅行者”的神秘角色，在自由的旅行中邂逅性格各异、能力独特的同伴们，和他们一起击败强敌，找回失散的亲人——同时，逐步发掘“原神”的真相。"
+        },
+        {
             name: "《英雄联盟》",
             des: "《英雄联盟》是由美国拳头游戏公司开发、中国大陆地区腾讯游戏代理运营的英雄对战MOBA竞技网游。游戏里拥有数百个个性英雄，并拥有排位系统、符文系统等特色系统。玩家在游戏中扮演召唤英雄的召唤师，操控自己的英雄与其他玩家进行战斗。"
         },
@@ -193,7 +203,8 @@ $(document).ready(function () {
         observeParents: true,
         observer: true,
         slidesPerView: 3,
-        loop: true,
+        loop: false,
+        virtualTranslate: true,
         speed: 500,
         centeredSlides: true,
         navigation: {
@@ -227,7 +238,7 @@ $(document).ready(function () {
         let line = document.querySelector('.container .screen.s2 .wrapper .skew');
         myVue.b = 0;
         if (!status[0]) {
-            line.style.transform = "translate(-20vw,0)";
+            line.style.transform = "translate(-18.5vw,0)";
             $(".swiper-container").fadeIn();
             $(".mask").css("display", "flex");
             $("#more1 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
@@ -252,7 +263,7 @@ $(document).ready(function () {
         let line = document.querySelector('.container .screen.s2 .wrapper .skew');
         myVue.b = 6;
         if (!status[1]) {
-            line.style.transform = "translate(19vw,0)";
+            line.style.transform = "translate(15vw,0)";
             $(".swiper-container").fadeIn();
             $("#gameName").text(GAME_DATA.online[1].name);
             $("#gameDes").text(GAME_DATA.online[1].des);
@@ -268,7 +279,7 @@ $(document).ready(function () {
                 width: "50%"
             });
             $("#warpper2").css({
-                transform: "translate(25%,25%)"
+                transform: "translate(20%,24%)"
             });
             $("#more2 svg text tspan").html("&nbsp;&nbsp;&nbsp;&nbsp;关&nbsp;闭");
         } else {
