@@ -375,6 +375,7 @@ body {
 .swiper-button-prev,
 .swiper-button-next {
     position: relative;
+    outline: none;
 }
 
 .skew-fix {
