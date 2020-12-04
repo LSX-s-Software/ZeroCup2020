@@ -1,176 +1,184 @@
 body {
-	font-family: Arial;
-	margin-top: 10%;
-	/* background-color: black; */
-	/* 在这修改背景 */
+    font-family: "SourceHanSansCN-Regular";
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    user-select: none;
+    margin-top: 10%;
+    background-color: rgba(27, 27, 27, 1);
 }
 
+@font-face {
+    font-family: "HYShangWeiShouShuW-Regular";
+    src: url(../source/font/HYShangWeiShouShuW.ttf);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 .cntl {
-	position: relative;
-	width: 100%;
-	overflow: hidden;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .cntl-center {
-	left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cntl-bar {
-	position: absolute;
-	width: 10px;
-	top: 0;
-	bottom: 0;
-	background-color: #ccc;
-	box-shadow: inset 0px 0px 7px -2px #000;
+    position: absolute;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    background-color: #ccc;
+    box-shadow: inset 0px 0px 7px -2px #000;
 }
 
 
 .cntl-bar-fill {
-	background-color: #009ABB;
-	position: absolute;
-	left:0;
-	right:0;
-	top:0;
-	height:0;
+    background-color: #009ABB;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 0;
 
 }
 
 .cntl-state {
-	position: relative;
-	width:100%;
-	min-height: 200px;
-	margin-bottom: 50px;
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 50px;
 }
 
 .cntl-state::after {
-	display:block;
-	content: ' ';
-	clear:both;
+    display: block;
+    content: ' ';
+    clear: both;
 }
 
 .cntl-icon {
-	border-radius: 50%;
-	width: 81px;
-	height: 81px;
-	background-color: #00313C;
-	border: solid 3px #009ABB;
-	box-shadow: 0px 0px 19px -9px #000;
-	position: absolute;
-	top: 0;
-	text-align: center;
-	line-height: 80px;
-	font-size: 35px;
-	color: #fff;
+    border-radius: 50%;
+    width: 81px;
+    height: 81px;
+    background-color: #00313C;
+    border: solid 3px #009ABB;
+    box-shadow: 0px 0px 19px -9px #000;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 80px;
+    font-size: 35px;
+    color: #fff;
 }
 
 .cntl-content {
-	/* background-color: white; */
-	background-color: rgba(238, 238, 238, 0.25);
-	/* 在这修改内容框颜色 */
-	width: 40%;
-	padding: 2%;
-	border-radius: 8px;
-	border-bottom: solid 3px #009ABB;
-	float:left;
-	opacity:0;
-	position:relative;
-	margin-left:-40%;
+    background-color: rgba(238, 238, 238, 0.25);
+    width: 40%;
+    padding: 2%;
+    border-radius: 8px;
+    border-bottom: solid 3px #009ABB;
+    float: left;
+    opacity: 0;
+    position: relative;
+    margin-left: -40%;
 }
 
 .cntl-state:nth-child(2n+2) .cntl-content {
-	float:right;
-	margin-right:-40%;
+    float: right;
+    margin-right: -40%;
 }
 
 .cntl-image {
-	opacity:0;
-	width: 40%;
-	padding: 2%;
+    opacity: 0;
+    width: 40%;
+    padding: 2%;
 }
 
 .cntl-state:nth-child(2n+1) .cntl-image {
-	float:right;
+    float: right;
 }
 
 .cntl-image img {
-	width:70%;
+    width: 70%;
 }
 
 .cntl-content h4 {
-	font-size:20px;
-	font-weight: normal;
-	margin-bottom: 10px;
-	margin-top: 0;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-top: 0;
 }
 
 
-/*
-animations
-*/
-.cntl-bar-fill,.cntl-content,.cntl-image {
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	-ms-transition: all 1s ease;
-	transition: all 1s ease;
+.cntl-bar-fill,
+.cntl-content,
+.cntl-image {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 .cntl-state:nth-child(2n+2).cntl-animate .cntl-content {
-	margin-right:0%;
+    margin-right: 0%;
 }
 
 .cntl-animate .cntl-content {
-	opacity:1;
-	margin-left:0%;
+    opacity: 1;
+    margin-left: 0%;
 }
 
 .cntl-animate .cntl-image {
-	opacity:1;
+    opacity: 1;
 }
 
-
-
-
-/* mobile support */
 
 @media (max-width: 600px) {
 
-	.cntl-bar {
-		left:auto;
-		right: 37px;
-	}
+    .cntl-bar {
+        left: auto;
+        right: 37px;
+    }
 
-	.cntl-content {
-		width:80%;
-		float:none;
-	}
-	.cntl-state:nth-child(2n+2) .cntl-content {
-		margin-right:0%;
-		float:none;
-	}
+    .cntl-content {
+        width: 80%;
+        float: none;
+    }
 
-	.cntl-image {
-		width:80%;
-	}
+    .cntl-state:nth-child(2n+2) .cntl-content {
+        margin-right: 0%;
+        float: none;
+    }
 
-	.cntl-state:nth-child(2n+1) .cntl-image {
-		float:none;
-	}
+    .cntl-image {
+        width: 80%;
+    }
 
-	.animate .cntl-content {
-		margin-left: 2%;
-	}
+    .cntl-state:nth-child(2n+1) .cntl-image {
+        float: none;
+    }
 
-	.cntl-icon {
-		left: auto;
-		right: 0;
-	}
+    .animate .cntl-content {
+        margin-left: 2%;
+    }
+
+    .cntl-icon {
+        left: auto;
+        right: 0;
+    }
 
 }
-#imgt{
-	width: 50%;
+
+#imgt {
+    width: 50%;
 }
