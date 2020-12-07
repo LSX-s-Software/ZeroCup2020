@@ -361,7 +361,7 @@ body {
 .mask h3 {
     width: 100%;
     display: inline-flex;
-    text-shadow: 2px 2px 4px #121212;
+    text-shadow: 2px 2px 10px #121212;
 }
 
 .mask h3 {
