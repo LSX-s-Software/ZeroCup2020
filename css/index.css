@@ -88,7 +88,7 @@ body {
     width: 100vw;
 }
 
-.s1 {
+.s1, .s4 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,6 +100,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: visible;
 }
 
 .screen.s1 .wrapper .bigger, .screen.s4 .wrapper .bigger {
@@ -124,8 +125,12 @@ body {
     transition-delay: 0.5s;
 }
 
-#s1l3 {
+#s1l3, #s5l2 {
     transition-delay: 0.9s;
+}
+
+#s5l3 {
+    transition-delay: 1.4s;
 }
 
 .promote {
