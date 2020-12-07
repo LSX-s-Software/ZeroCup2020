@@ -1,0 +1,25 @@
+// dic = {name:"",nation: "",game: "",championship: "",team:"",famousFor:"",award:"",character:""};
+var models = [
+    {name:"N0tail",nation: "",game:"守望先锋",championship: "",team:"",award:"",character:""},
+    {name:"Zunba",nation: "韩国",game:"守望先锋",championship: "",team:"",famousFor:"他的查丽娅",award:"",character:""},
+    {name:"JJonak",nation: "韩国",game:"守望先锋",championship: "",team:"",famousFor:"他的禅雅塔",award:"",character:""},
+    {name:"miro",nation: "韩国",game:"守望先锋",championship: "",team:"",award:"",character:""},
+    {name:"sky",nation: "",game:"魔兽争霸",championship: "",team:"",famousFor:"当过奥运火炬手",award:"",character:""},
+    {name:"moon",nation: "",game:"魔兽争霸",championship: "",team:"",award:"",character:""},
+    {name:"kuroky",nation: "",game:"DOTA2",championship: "",team:"",award:"2017年Dota2国际邀请赛冠军",character:""},
+    {name:"faker",nation: "韩国",game: "英雄联盟",championship: "",team:"",award:"",character:""},
+    {name:"the shy",nation: "韩国",game: "英雄联盟",championship: "LPL",team:"",award:"",character:""},
+    {name:"Rookie",nation: "韩国",game: "英雄联盟",championship: "LPL",team:"",award:"2018年世界总决赛冠军",character:"中单"},
+    {name:"Doinb",nation: "韩国",game: "英雄联盟",championship: "LPL",team:"",award:"",character:"中单"},
+    {name:"doublelift",nation: "",game: "英雄联盟",championship: "",team:"",award:"",character:""},
+    {name:"karsa",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"",character:"打野",working:true},
+    {name:"tian",nation: "中国",game: "英雄联盟",championship: "",team:"",famousFor:"他的琪亚娜",award:"世界总决赛冠军",character:"打野",working:true},
+    {name:"ning",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"世界总决赛冠军",character:"打野",working:true},
+    {name:"xiaohu",nation: "中国",game: "英雄联盟",championship: "",team:"RNG",award:"",character:"中单",working:true},
+    {name:"ming",nation: "中国",game: "英雄联盟",championship: "",team:"RNG",award:"",character:"",working:true},
+    {name:"Weixiao",nation: "中国",game: "英雄联盟",championship: "",team:"WE",award:"",character:"下路",working:true},
+    {name:"Uzi",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"",character:"下路",working:false},
+    {name:"Clearlove",nation: "中国",game: "英雄联盟",championship: "",team:"WE",award:"",character:"",working:false},
+    {name:"mlxg",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"",character:"打野",working:false},
+    {name:"letme",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"",character:"",working:false}
+];
