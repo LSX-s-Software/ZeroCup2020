@@ -100,7 +100,10 @@ window.addEventListener('scroll', () => {
     if (scrolled > 3.75 && scrolled < 4.5) sides[3].classList.add("colored");
     if (scrolled > 4.5) sides[4].classList.add("colored");
     //----第一屏提示----
-    if (timer != null && scrolled > 0.8) timer = null;
+    if (timer != 0 && scrolled > 0.8) {
+        clearInterval(timer);
+        timer = -1;
+    }
     //----banner附加文字----
     if (scrolled > 1.75) {
         banner.style.opacity = 1;
