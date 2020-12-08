@@ -1,25 +1,148 @@
-// dic = {name:"",nation: "",game: "",championship: "",team:"",famousFor:"",award:"",character:""};
+function Dictionary() {
+    this.dataStore = [];
+    this.add = add;     // 添加元素
+    this.inc = inc;
+    this.find = find;    // 查找元素
+    this.remove = remove;  // 删除元素
+    this.count = count;   // 字典中元素个数
+    this.showAll = showAll; // 显示字典元素
+    this.clear = clear;   // 清空字典
+    function add(key, value) {
+        this.dataStore[key] = value;
+    }
+    function inc(key) {
+        if (!this.dataStore[key]) add(key, 1);
+        else this.dataStore[key]++;
+    }
+    function find(key) {
+        return this.dataStore[key];
+    }
+    function remove(key) {
+        if (this.dataStore[key]) delete this.dataStore[key];
+        else return 'Not Found';
+    }
+    function showAll() {
+        for (var key in this.dataStore) {
+            console.log(key + ': ' + this.dataStore[key]);
+        }
+    }
+    function count() {
+        var n = 0;
+        for (var key in this.dataStore) {
+            ++n;
+        }
+        return n;
+    }
+    function clear() {
+        for (var key in this.dataStore) {
+            delete this.dataStore[key];
+        }
+    }
+}
+
+// dic = {name:"未知",nation: "未知",game: "未知",championship: "未知",team:"未知",famousFor:"未知",award:"未知",character:"未知",working:};
 var models = [
-    {name:"N0tail",nation: "",game:"守望先锋",championship: "",team:"",award:"",character:""},
-    {name:"Zunba",nation: "韩国",game:"守望先锋",championship: "",team:"",famousFor:"他的查丽娅",award:"",character:""},
-    {name:"JJonak",nation: "韩国",game:"守望先锋",championship: "",team:"",famousFor:"他的禅雅塔",award:"",character:""},
-    {name:"miro",nation: "韩国",game:"守望先锋",championship: "",team:"",award:"",character:""},
-    {name:"sky",nation: "",game:"魔兽争霸",championship: "",team:"",famousFor:"当过奥运火炬手",award:"",character:""},
-    {name:"moon",nation: "",game:"魔兽争霸",championship: "",team:"",award:"",character:""},
-    {name:"kuroky",nation: "",game:"DOTA2",championship: "",team:"",award:"2017年Dota2国际邀请赛冠军",character:""},
-    {name:"faker",nation: "韩国",game: "英雄联盟",championship: "",team:"",award:"",character:""},
-    {name:"the shy",nation: "韩国",game: "英雄联盟",championship: "LPL",team:"",award:"",character:""},
-    {name:"Rookie",nation: "韩国",game: "英雄联盟",championship: "LPL",team:"",award:"2018年世界总决赛冠军",character:"中单"},
-    {name:"Doinb",nation: "韩国",game: "英雄联盟",championship: "LPL",team:"",award:"",character:"中单"},
-    {name:"doublelift",nation: "",game: "英雄联盟",championship: "",team:"",award:"",character:""},
-    {name:"karsa",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"",character:"打野",working:true},
-    {name:"tian",nation: "中国",game: "英雄联盟",championship: "",team:"",famousFor:"他的琪亚娜",award:"世界总决赛冠军",character:"打野",working:true},
-    {name:"ning",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"世界总决赛冠军",character:"打野",working:true},
-    {name:"xiaohu",nation: "中国",game: "英雄联盟",championship: "",team:"RNG",award:"",character:"中单",working:true},
-    {name:"ming",nation: "中国",game: "英雄联盟",championship: "",team:"RNG",award:"",character:"",working:true},
-    {name:"Weixiao",nation: "中国",game: "英雄联盟",championship: "",team:"WE",award:"",character:"下路",working:true},
-    {name:"Uzi",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"",character:"下路",working:false},
-    {name:"Clearlove",nation: "中国",game: "英雄联盟",championship: "",team:"WE",award:"",character:"",working:false},
-    {name:"mlxg",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"",character:"打野",working:false},
-    {name:"letme",nation: "中国",game: "英雄联盟",championship: "",team:"",award:"",character:"",working:false}
+    ["N0tail", "未知", "守望先锋", "未知", "未知", "未知", "未知", "未知", "未知"],
+    ["Zunba", "韩国", "守望先锋", "未知", "未知", "未知", "未知", "未知", "他的查丽娅"],
+    ["JJonak", "韩国", "守望先锋", "未知", "未知", "未知", "未知", "未知", "他的禅雅塔"],
+    ["miro", "韩国", "守望先锋", "未知", "未知", "未知", "未知", "未知", "未知"],
+    ["sky", "未知", "魔兽争霸", "未知", "未知", "当过奥运火炬手", "未知", "未知", "未知"],
+    ["moon", "未知", "魔兽争霸", "未知", "未知", "未知", "未知", "未知", "未知"],
+    ["kuroky", "未知", "DOTA2", "未知", "未知", "2017年Dota2国际邀请赛冠军", "未知", "未知", "未知"],
+    ["faker", "韩国", "英雄联盟", "未知", "未知", "未知", "未知", "未知", "未知"],
+    ["the shy", "韩国", "英雄联盟", "LPL", "未知", "未知", "未知", "未知", "未知"],
+    ["Rookie", "韩国", "英雄联盟", "LPL", "未知", "2018年世界总决赛冠军", "中单", "未知", "未知"],
+    ["Doinb", "韩国", "英雄联盟", "LPL", "未知", "未知", "中单", "未知", "未知"],
+    ["doublelift", "未知", "英雄联盟", "未知", "未知", "未知", "未知", "未知", "未知"],
+    ["karsa", "中国", "英雄联盟", "未知", "未知", "未知", "未知", "打野", true],
+    ["tian", "中国", "英雄联盟", "未知", "未知", "他的琪亚娜", "世界总决赛冠军", "打野", true],
+    ["ning", "中国", "英雄联盟", "未知", "未知", "未知", "世界总决赛冠军", "打野", true],
+    ["xiaohu", "中国", "英雄联盟", "未知", "RNG", "未知", "未知", "中单", true],
+    ["ming", "中国", "英雄联盟", "未知", "RNG", "未知", "未知", "未知", true],
+    ["Weixiao", "中国", "英雄联盟", "未知", "WE", "未知", "未知", "下路", true],
+    ["Uzi", "中国", "英雄联盟", "未知", "未知", "未知", "未知", "下路", false],
+    ["Clearlove", "中国", "英雄联盟", "未知", "WE", "未知", "未知", "未知", false],
+    ["mlxg", "中国", "英雄联盟", "未知", "未知", "未知", "未知", "打野", false],
+    ["letme", "中国", "英雄联盟", "未知", "未知", "未知", "未知", "未知", false]
 ];
+
+var count = [[{ name: "", count: 0 }]]//[new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary() };
+var j = 0;
+for (j = 0; j < 9; j++) {
+    for (i = 0; i < models.length; i++) {
+        if (!count[j]) {
+            count.push([{ name: models[i][j], count: 1 }]);
+        } else {
+            var k = found(count[j], models[i][j]);
+            if (k != -1) count[j][k].count++;
+            else {
+                count[j].push({
+                    name: models[i][j],
+                    count: 1
+                })
+            }
+        }
+    }
+}
+// count.forEach(ele => {
+//     ele.forEach(e => {
+//         console.log(e);
+//     })
+//     console.log("");
+// })
+var max = { name: "", count: "" }
+var countMax = [max];
+for (i = 1; i < count.length; i++) {
+    countMax[i] = getMax(count[i]);
+}
+// countMax.forEach(ele => {
+//     console.log(ele);
+// })
+var question = getMax(countMax);
+switch (question.index) {
+    case 1:
+        console.log("你所想的人是" + question.name + "人吗？")
+        break;
+    case 2:
+        console.log("你所想的人是" + question.name + "的职业选手吗？")
+        break;
+    case 3:
+        console.log("你所想的人参加" + question.name + "联赛吗？")
+        break;
+    case 4:
+        console.log("你所想的人属于或曾属于" + question.name + "战队吗？")
+        break;
+    case 5:
+        console.log("你所想的人因为" + question.name + "而出名吗？")
+        break;
+    case 6:
+        console.log("你所想的人曾获" + question.name + "吗？")
+        break;
+    case 7:
+        console.log("你所想的人是" + question.name + "选手吗？")
+        break;
+    case 8:
+        console.log("你所想的人" + question.name ? "在役" : "已经退役了" + "吗？")
+        break;
+    default:
+        break;
+}
+
+
+function found(arr, name) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].name == name) return i;
+    }
+    return -1;
+}
+
+function getMax(arr) {
+    var maxObj = { name: "", count: 0, index: 0 };
+    for (var j = 0; j < arr.length; j++) {
+        if (arr[j].count > maxObj.count) {
+            maxObj = arr[j];
+            maxObj.index = j;
+        }
+    }
+    return maxObj;
+}
