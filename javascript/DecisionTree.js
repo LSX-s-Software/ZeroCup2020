@@ -1,44 +1,44 @@
-function Dictionary() {
-    this.dataStore = [];
-    this.add = add;     // 添加元素
-    this.inc = inc;
-    this.find = find;    // 查找元素
-    this.remove = remove;  // 删除元素
-    this.count = count;   // 字典中元素个数
-    this.showAll = showAll; // 显示字典元素
-    this.clear = clear;   // 清空字典
-    function add(key, value) {
-        this.dataStore[key] = value;
-    }
-    function inc(key) {
-        if (!this.dataStore[key]) add(key, 1);
-        else this.dataStore[key]++;
-    }
-    function find(key) {
-        return this.dataStore[key];
-    }
-    function remove(key) {
-        if (this.dataStore[key]) delete this.dataStore[key];
-        else return 'Not Found';
-    }
-    function showAll() {
-        for (var key in this.dataStore) {
-            console.log(key + ': ' + this.dataStore[key]);
-        }
-    }
-    function count() {
-        var n = 0;
-        for (var key in this.dataStore) {
-            ++n;
-        }
-        return n;
-    }
-    function clear() {
-        for (var key in this.dataStore) {
-            delete this.dataStore[key];
-        }
-    }
-}
+// function Dictionary() {
+//     this.dataStore = [];
+//     this.add = add;     // 添加元素
+//     this.inc = inc;
+//     this.find = find;    // 查找元素
+//     this.remove = remove;  // 删除元素
+//     this.count = count;   // 字典中元素个数
+//     this.showAll = showAll; // 显示字典元素
+//     this.clear = clear;   // 清空字典
+//     function add(key, value) {
+//         this.dataStore[key] = value;
+//     }
+//     function inc(key) {
+//         if (!this.dataStore[key]) add(key, 1);
+//         else this.dataStore[key]++;
+//     }
+//     function find(key) {
+//         return this.dataStore[key];
+//     }
+//     function remove(key) {
+//         if (this.dataStore[key]) delete this.dataStore[key];
+//         else return 'Not Found';
+//     }
+//     function showAll() {
+//         for (var key in this.dataStore) {
+//             console.log(key + ': ' + this.dataStore[key]);
+//         }
+//     }
+//     function count() {
+//         var n = 0;
+//         for (var key in this.dataStore) {
+//             ++n;
+//         }
+//         return n;
+//     }
+//     function clear() {
+//         for (var key in this.dataStore) {
+//             delete this.dataStore[key];
+//         }
+//     }
+// }
 
 // dic = {name:"未知",nation: "未知",game: "未知",championship: "未知",team:"未知",famousFor:"未知",award:"未知",character:"未知",working:};
 var models = [
@@ -65,69 +65,93 @@ var models = [
     ["mlxg", "中国", "英雄联盟", "未知", "未知", "未知", "未知", "打野", false],
     ["letme", "中国", "英雄联盟", "未知", "未知", "未知", "未知", "未知", false]
 ];
-
-var count = [[{ name: "", count: 0 }]]//[new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary() };
-var j = 0;
-for (j = 0; j < 9; j++) {
-    for (i = 0; i < models.length; i++) {
-        if (!count[j]) {
-            count.push([{ name: models[i][j], count: 1 }]);
-        } else {
-            var k = found(count[j], models[i][j]);
-            if (k != -1) count[j][k].count++;
-            else {
-                count[j].push({
-                    name: models[i][j],
-                    count: 1
-                })
+function work() {
+    if (models.length == 1) {
+        alert("我猜他是" + models[0][0]);
+        return;
+    }
+    if (models.length == 0) {
+        alert("你猜的人不在名人堂里");
+        return;
+    }
+    var count = [[{ name: "", count: 0 }]]//[new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary() };
+    var j = 0;
+    for (j = 0; j < 9; j++) {
+        for (i = 0; i < models.length; i++) {
+            if (!count[j]) {
+                count.push([{ name: models[i][j], count: 1 }]);
+            } else {
+                var k = found(count[j], models[i][j]);
+                if (k != -1) count[j][k].count++;
+                else {
+                    count[j].push({
+                        name: models[i][j],
+                        count: 1
+                    })
+                }
             }
         }
     }
+    // count.forEach(ele => {
+    //     ele.forEach(e => {
+    //         console.log(e);
+    //     })
+    //     console.log("");
+    // })
+    var max = { name: "", count: "" }
+    var countBest = [max];
+    for (i = 1; i < count.length; i++) {
+        countBest[i] = getBest(count[i]);
+    }
+    // countMax.forEach(ele => {
+    //     console.log(ele);
+    // })
+    var question = getBest(countBest);
+    var res;
+    switch (question.index) {
+        case 1:
+            res = confirm("你所想的人是" + question.name + "人吗？")
+            break;
+        case 2:
+            res = confirm("你所想的人是" + question.name + "的职业选手吗？")
+            break;
+        case 3:
+            res = confirm("你所想的人参加" + question.name + "联赛吗？")
+            break;
+        case 4:
+            res = confirm("你所想的人属于或曾属于" + question.name + "战队吗？")
+            break;
+        case 5:
+            res = confirm("你所想的人因为" + question.name + "而出名吗？")
+            break;
+        case 6:
+            res = confirm("你所想的人曾获" + question.name + "吗？")
+            break;
+        case 7:
+            res = confirm("你所想的人是" + question.name + "选手吗？")
+            break;
+        case 8:
+            res = confirm("你所想的人" + question.name ? "在役" : "已经退役了" + "吗？")
+            break;
+        default:
+            break;
+    }
+    var newModels = [];
+    for (i = 1; i < models.length; i++) {
+        if (res) {
+            if (models[i][question.index] == question.name) {
+                newModels.push(models[i]);
+            }
+        } else {
+            if (models[i][question.index] != question.name) {
+                newModels.push(models[i]);
+            }
+        }
+    }
+    models = newModels;
+    work();
 }
-// count.forEach(ele => {
-//     ele.forEach(e => {
-//         console.log(e);
-//     })
-//     console.log("");
-// })
-var max = { name: "", count: "" }
-var countMax = [max];
-for (i = 1; i < count.length; i++) {
-    countMax[i] = getMax(count[i]);
-}
-// countMax.forEach(ele => {
-//     console.log(ele);
-// })
-var question = getMax(countMax);
-switch (question.index) {
-    case 1:
-        console.log("你所想的人是" + question.name + "人吗？")
-        break;
-    case 2:
-        console.log("你所想的人是" + question.name + "的职业选手吗？")
-        break;
-    case 3:
-        console.log("你所想的人参加" + question.name + "联赛吗？")
-        break;
-    case 4:
-        console.log("你所想的人属于或曾属于" + question.name + "战队吗？")
-        break;
-    case 5:
-        console.log("你所想的人因为" + question.name + "而出名吗？")
-        break;
-    case 6:
-        console.log("你所想的人曾获" + question.name + "吗？")
-        break;
-    case 7:
-        console.log("你所想的人是" + question.name + "选手吗？")
-        break;
-    case 8:
-        console.log("你所想的人" + question.name ? "在役" : "已经退役了" + "吗？")
-        break;
-    default:
-        break;
-}
-
+work();
 
 function found(arr, name) {
     for (var i = 0; i < arr.length; i++) {
@@ -145,4 +169,21 @@ function getMax(arr) {
         }
     }
     return maxObj;
+}
+
+function getBest(arr) {
+    var bestObj = { name: "", count: 0, index: 0 };
+    var distance = [];
+    var minDistance = Math.floor(models.length / 2);
+    for (var j = 0; j < arr.length; j++) {
+        distance.push(Math.abs(arr[j].count - Math.floor(models.length / 2)))
+    }
+    for (var j = 0; j < arr.length; j++) {
+        if (distance[j] < minDistance) {
+            bestObj = arr[j];
+            bestObj.index = j;
+            minDistance = distance[j];
+        }
+    }
+    return bestObj;
 }
