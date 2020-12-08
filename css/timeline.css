@@ -22,7 +22,7 @@ body {
 .cntl {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .cntl-center {
@@ -31,7 +31,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
+.cntl-content p{white-space: normal;}
 .cntl-bar {
     position: absolute;
     width: 10px;
