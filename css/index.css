@@ -125,12 +125,18 @@ body {
     transition-delay: 0.5s;
 }
 
-#s1l3, #s5l2 {
+#s1l3 {
     transition-delay: 0.9s;
 }
 
+#s5l2 {
+    transition-delay: 1s;
+    transition-duration: 1.25s;
+}
+
 #s5l3 {
-    transition-delay: 1.4s;
+    transition-delay: 2s;
+    transition-duration: 1.5s;
 }
 
 .promote {
@@ -199,9 +205,10 @@ body {
     background-color: rgba(27, 27, 27, 1);
 }
 
-.container .screen.s2 #warpper1 {
-    /* animation: flashin1 1s; */
+.screen.s2 #warpper1 {
+    animation: flashin1 1s;
     position: relative;
+    animation-play-state: paused;
 }
 
 @keyframes flashin1 {
@@ -216,9 +223,10 @@ body {
     }
 }
 
-.container .screen.s2 #warpper2 {
-    /* animation: flashin2 1s; */
+.screen.s2 #warpper2 {
+    animation: flashin2 1s;
     position: relative;
+    animation-play-state: paused;
 }
 
 @keyframes flashin2 {
@@ -254,7 +262,6 @@ body {
     justify-content: center;
     flex-direction: column;
     transition: all ease-out 0.5s;
-    opacity: 0;
 }
 
 .container .screen.s2 .wrapper .content-wrapper .head {
@@ -317,6 +324,7 @@ body {
     cursor: pointer;
     opacity: 0;
     transition: opacity ease-out 0.3s;
+    transition-delay: 1.25s;
 }
 
 .container .screen.s2 .wrapper .btn svg {
@@ -475,25 +483,25 @@ video {
 
 .text-view {
     z-index: 5;
-    width: 15rem;
-    /* height: 8rem; */
+    max-width: 15rem;
     position: absolute;
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: none;
     background: rgba(200, 159, 106, 0.25);
     opacity: 0;
-    transform: scale(1) translateX(0) translateY(15px);
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    transform: scale(1) translateY(15px);
+    transition: all 0.8s ease-out;
     padding: 8px;
     word-wrap:break-word;
     word-break:normal;
     white-space: pre-wrap;
-    font-size: 8px;
+    font-size: 0.7rem;
     /* rgba(212, 211, 211, 0.253); */
 }
 
 .text-view.hover.left {
-    transform: scale(1.4) translateX(calc(13.2rem)) translateY(15px);
+    transform: scale(1.4) translateX(calc(13.1rem)) translateY(15px);
     opacity: 1;
 }
 
@@ -511,11 +519,14 @@ video {
     transform: translateY(0px);
 }
 
+svg.sider {
+    position: absolute;
+}
+
 .sd1 {
-    position: fixed;
     top: 20vh;
     left: 12.8vw;
-    transition: all 1s;
+    /* transition: all 1s; */
 }
 
 @keyframes getin1 {
@@ -535,10 +546,9 @@ video {
 }
 
 .sd2 {
-    position: fixed;
     top: calc(20vh + 28.6vh);
     left: 7.9vw;
-    transition: all 1s;
+    /* transition: all 1s;*/
 }
 
 @keyframes getin2 {
@@ -558,10 +568,9 @@ video {
 }
 
 .sd3 {
-    position: fixed;
     top: calc(20vh + 57.2vh);
     left: 12vw;
-    transition: all 1s;
+    /* transition: all 1s;*/
 }
 
 @keyframes getin3 {
@@ -581,10 +590,9 @@ video {
 }
 
 .sd4 {
-    position: fixed;
     top: calc(20vh);
     right: 12.8vw;
-    transition: all 1s;
+    /* transition: all 1s;*/
 }
 
 @keyframes getin4 {
@@ -604,10 +612,9 @@ video {
 }
 
 .sd5 {
-    position: fixed;
     top: calc(20vh + 28.6vh);
     right: 7.9vw;
-    transition: all 1s;
+    /* transition: all 1s;*/
 }
 
 @keyframes getin5 {
@@ -627,10 +634,9 @@ video {
 }
 
 .sd6 {
-    position: fixed;
     top: calc(20vh + 57.2vh);
     right: 12vw;
-    transition: all 1s;
+    /* transition: all 1s;*/
 }
 
 @keyframes getin6 {

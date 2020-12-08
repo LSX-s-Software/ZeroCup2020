@@ -1,4 +1,4 @@
-const GAME_DATA = {
+const GAME_DATA = { //Swiper里的文字介绍数据
     single: [{
         name: "《黑神话：悟空》",
         des: "《黑神话：悟空》是一款由游戏科学公司制作的动作角色扮演游戏。游戏以“西游记”为背景，“悟空”为故事主线，还原心玩家中一直存在的东方魔幻世界。"
@@ -78,72 +78,79 @@ function easeInOutCubic(x) {
     return x < 0.5 ? 4 * x * x * x : 1 - pow(-2 * x + 2, 3) / 2;
 }
 
+var animated = { s2: false, s3: false,  };
 window.addEventListener('scroll', () => {
     let scrolled = (document.documentElement.scrollTop) / (document.documentElement.clientHeight); // 当前在第几分屏
     //分屏：0-1：游戏与电子竞技 1-2两个查看详情图 2-3视频全屏->缩小
     console.log(scrolled);
-    let siders = document.querySelectorAll('.container .screen.s2 .sider');
+    let siders = document.querySelectorAll('.sider');
     let banner = document.querySelector('.banner .span.hidden');
-    let video = document.querySelectorAll('.screen.s2 .video-section video')[0];
-    let img = document.querySelectorAll('.screen.s2 .video-section img')[0];
+    let video = document.querySelectorAll('.video-section video')[0];
+    let img = document.querySelectorAll('.video-section img')[0];
     let s3wrapper = document.querySelectorAll('.screen.s3 .wrapper svg');
-    let WHRate = 1280 / 720;
-    let sides = document.querySelectorAll('.container .sidebar .side');
+    let WHRate = 1.77777778;
+    let sides = document.querySelectorAll('.sidebar .side');
+    //----分页器----
     for (side of sides) {
         side.classList.remove("colored");
     }
     if (scrolled < 0.75) sides[0].classList.add("colored");
     if (scrolled > 0.75 && scrolled < 1.75) sides[1].classList.add("colored");
     if (scrolled > 1.75 && scrolled < 3.75) sides[2].classList.add("colored");
-    if (scrolled > 3.75 && scrolled < 4.75) sides[3].classList.add("colored");
-    if (scrolled > 4.75) sides[4].classList.add("colored");
-    if (scrolled > 0.75) {
-        $("#warpper1,#warpper2").css("opacity", 1);
-        $("#warpper1").css("animation", "flashin1 1s");
-        $("#warpper2").css("animation", "flashin2 1s");
-        $(".skew .line").fadeIn();
-    }
+    if (scrolled > 3.75 && scrolled < 4.5) sides[3].classList.add("colored");
+    if (scrolled > 4.5) sides[4].classList.add("colored");
+    //----第一屏提示----
+    if (timer != null && scrolled > 0.8) timer = null;
+    //----banner附加文字----
     if (scrolled > 1.75) {
         banner.style.opacity = 1;
     } else {
         banner.style.opacity = 0;
     }
-    if (scrolled > 0.9) $(".container .screen.s2 .wrapper .btn").css("opacity", 1);
+    //----页面动画----
     if (scrolled >= 0.85) {
         $(".banner").css("opacity", 1);
     } else {
         $(".banner").css("opacity", 0);
     }
+    if (!animated["s2"] && scrolled > 0.6) {
+        $("#warpper1,#warpper2").css("animation-play-state", "running");
+        $(".skew .line").fadeIn();
+        $(".screen.s2 .wrapper .btn").css("opacity", 1);
+        animated["s2"] = true;
+    }
     if (scrolled < 2) {
-        video.style.width = 1944 / 18.25 + 'vw';
-        img.style.width = 1963 / 18.25 + 'vw';
-        img.style.height = 1454 / 8.84 + 'vh';
+        video.style.width = "106.52vw"; // 1944 / 18.25 + 'vw';
+        img.style.width = "107.56vw"; // 1963 / 18.25 + 'vw';
+        img.style.height = "164.48vh"; // 1454 / 8.84 + 'vh';
     }
     if (scrolled > 2 && scrolled < 3) {
-        let width = 747 + (1944 - 747) * (1 - easeInOutCubic(scrolled - 2));
+        let width = 747 + 1197 * (1 - easeInOutCubic(scrolled - 2)); // 747 + (1944 - 747) * (1 - easeInOutCubic(scrolled - 2));
         video.style.width = width / 18.25 + 'vw';
         img.style.width = width * 1.01 / 18.25 + 'vw';
-        img.style.height = width / WHRate * 1.33 / 8.84 + 'vh';
+        img.style.height = width / WHRate * 0.15 + 'vh'; // width / WHRate * 1.33 / 8.84 + 'vh';
     }
     if (scrolled > 3) {
-        video.style.width = 747 / 18.25 + 'vw';
-        img.style.width = 754 / 18.25 + 'vw';
-        img.style.height = 558 / 8.84 + 'vh';
+        video.style.width = "40.93vw"; // 747 / 18.25 + 'vw';
+        img.style.width = "41.315vw"; // 754 / 18.25 + 'vw';
+        img.style.height = "63.122vh"; // 558 / 8.84 + 'vh';
     }
-    if (scrolled > 3) {
+    if (!animated["s3"] && scrolled > 2.9) {
         let i = 1;
         for (sider of siders) {
             sider.style.animation = "getin" + i + " 1s";
             sider.style.visibility = "visible";
-            console.log("getin" + i + " 1s");
-            i += 1;
+            // console.log("getin" + i + " 1s");
+            i++;
         }
+        animated["s3"] = true;
     }
     if (scrolled < 2.5) {
         for (sider of siders) {
             sider.style.visibility = "hidden";
             sider.style.animation = "";
         }
+        animated["s3"] = false;
     }
     if (scrolled < 4) {
         for (item of s3wrapper) {
@@ -163,6 +170,7 @@ window.addEventListener('scroll', () => {
     }
 })
 
+var timer;
 $(document).ready(function () {
     $("#s1bgImg").fadeIn(500, function () {
         $("#s1l1, #s1l2, #s1l3").css({
@@ -173,7 +181,7 @@ $(document).ready(function () {
             $(".promote").fadeIn(2000);
         }, 1500);
     });
-    setInterval(function () {
+    timer = setInterval(function () {
         $(".promote").animate({
             bottom: "+=50px"
         }, {
@@ -198,6 +206,7 @@ $(document).ready(function () {
         virtualTranslate: true,
         speed: 500,
         centeredSlides: true,
+        allowTouchMove: false,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -227,7 +236,7 @@ $(document).ready(function () {
     let slides = document.querySelectorAll('.swiper-container .skew-fix img');
     $("#more1").click(function (e) {
         e.preventDefault();
-        let line = document.querySelector('.container .screen.s2 .wrapper .skew');
+        let line = document.querySelector('.screen.s2 .wrapper .skew');
         if (!status[0]) {
             var i = 0;
             slides.forEach(slide => {
@@ -258,7 +267,7 @@ $(document).ready(function () {
     });
     $("#more2").click(function (e) {
         e.preventDefault();
-        let line = document.querySelector('.container .screen.s2 .wrapper .skew');
+        let line = document.querySelector('.screen.s2 .wrapper .skew');
         if (!status[1]) {
             var i = 6;
             slides.forEach(slide => {
