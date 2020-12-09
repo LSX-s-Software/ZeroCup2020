@@ -24,9 +24,6 @@ body {
   height: calc(3.3 * 1080px);
 }
 
-.top span {
-  margin-left: 2%;
-}
 
 .main-item {
   width: 20%;
