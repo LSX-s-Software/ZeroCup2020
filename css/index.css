@@ -317,14 +317,14 @@ body {
 
 .container .screen.s2 .wrapper .btn {
     position: relative;
-    display: flex;
+    display: flex;  
     justify-content: center;
     align-items: center;
     margin: 5.6vh auto;
     cursor: pointer;
     opacity: 0;
-    transition: opacity ease-out 0.3s;
-    transition-delay: 1.25s;
+    transition: opacity ease-out 0.8s;
+    transition-delay: 0.8s;
 }
 
 .container .screen.s2 .wrapper .btn svg {
