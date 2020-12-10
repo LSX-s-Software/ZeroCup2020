@@ -1,7 +1,8 @@
 const GAME_DATA = { //Swiper里的文字介绍数据
     single: [{
         name: "《黑神话：悟空》",
-        des: "《黑神话：悟空》是一款由游戏科学公司制作的动作角色扮演游戏。游戏以“西游记”为背景，“悟空”为故事主线，还原心玩家中一直存在的东方魔幻世界。"
+        des: "《黑神话：悟空》是一款由游戏科学公司制作的动作角色扮演游戏。游戏以“西游记”为背景，“悟空”为故事主线，还原心玩家中一直存在的东方魔幻世界。",
+        url: ""
     }, //第一个为占位符
     {
         name: "《塞尔达传说 旷野之息》",
@@ -221,17 +222,21 @@ $(document).ready(function () {
             if (mySwiper.realIndex > GAME_DATA.single.length) {
                 $("#gameName").text(GAME_DATA.single[0].name);
                 $("#gameDes").text(GAME_DATA.single[0].des);
+                $("#gameSite").attr("href", GAME_DATA.single[0].url);
             } else {
                 $("#gameName").text(GAME_DATA.single[mySwiper.realIndex + 1].name);
                 $("#gameDes").text(GAME_DATA.single[mySwiper.realIndex + 1].des);
+                $("#gameSite").attr("href", GAME_DATA.single[mySwiper.realIndex + 1].url);
             }
         } else if (status[1]) {
             if (mySwiper.realIndex > GAME_DATA.online.length) {
                 $("#gameName").text(GAME_DATA.online[0].name);
                 $("#gameDes").text(GAME_DATA.online[0].des);
+                $("#gameSite").attr("href", GAME_DATA.online[0].url);
             } else {
                 $("#gameName").text(GAME_DATA.online[mySwiper.realIndex + 1].name);
                 $("#gameDes").text(GAME_DATA.online[mySwiper.realIndex + 1].des);
+                $("#gameSite").attr("href", GAME_DATA.online[mySwiper.realIndex + 1].url);
             }
         }
     });
@@ -256,6 +261,7 @@ $(document).ready(function () {
             });
             $("#gameName").text(GAME_DATA.single[1].name);
             $("#gameDes").text(GAME_DATA.single[1].des);
+            $("#gameSite").attr("href", GAME_DATA.single[1].url);
         } else {
             mySwiper.slideTo(0, 0);
             line.style.transform = "translate(0px,0)";
@@ -272,9 +278,9 @@ $(document).ready(function () {
         e.preventDefault();
         let line = document.querySelector('.screen.s2 .wrapper .skew');
         if (!status[1]) {
-            var i = 6;
+            var i = GAME_DATA.single.length - 1;
             slides.forEach(slide => {
-                if (i == 6) slide.setAttribute("src", "./source/img/game/12.jpg");
+                if (i == 6) slide.setAttribute("src", "./source/img/game/" + (2*i) + ".jpg");
                 else slide.setAttribute("src", "./source/img/game/" + i + ".jpg");
                 i++;
             });
@@ -282,6 +288,7 @@ $(document).ready(function () {
             $(".swiper-container").fadeIn();
             $("#gameName").text(GAME_DATA.online[1].name);
             $("#gameDes").text(GAME_DATA.online[1].des);
+            $("#gameSite").attr("href", GAME_DATA.online[1].url);
             $(".mask").css("display", "flex");
             $(".mask h3").css("padding-right", "15%");
             $(".swiper-container").css({
@@ -289,7 +296,7 @@ $(document).ready(function () {
                 right: "auto"
             });
             $(".mask").css({
-                left: "0",
+                left: "-100px",
                 right: "auto",
                 width: "50%"
             });

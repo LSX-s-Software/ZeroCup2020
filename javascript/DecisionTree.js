@@ -1,46 +1,3 @@
-// function Dictionary() {
-//     this.dataStore = [];
-//     this.add = add;     // 添加元素
-//     this.inc = inc;
-//     this.find = find;    // 查找元素
-//     this.remove = remove;  // 删除元素
-//     this.count = count;   // 字典中元素个数
-//     this.showAll = showAll; // 显示字典元素
-//     this.clear = clear;   // 清空字典
-//     function add(key, value) {
-//         this.dataStore[key] = value;
-//     }
-//     function inc(key) {
-//         if (!this.dataStore[key]) add(key, 1);
-//         else this.dataStore[key]++;
-//     }
-//     function find(key) {
-//         return this.dataStore[key];
-//     }
-//     function remove(key) {
-//         if (this.dataStore[key]) delete this.dataStore[key];
-//         else return 'Not Found';
-//     }
-//     function showAll() {
-//         for (var key in this.dataStore) {
-//             console.log(key + ': ' + this.dataStore[key]);
-//         }
-//     }
-//     function count() {
-//         var n = 0;
-//         for (var key in this.dataStore) {
-//             ++n;
-//         }
-//         return n;
-//     }
-//     function clear() {
-//         for (var key in this.dataStore) {
-//             delete this.dataStore[key];
-//         }
-//     }
-// }
-
-// dic = {name:"未知",nation: "未知",game: "未知",championship: "未知",team:"未知",famousFor:"未知",award:"未知",character:"未知",working:};
 var models = [
     ["N0tail", "丹麦", "Dota2", "外赛区", "OG", false, "国际邀请赛冠军", "辅助", true],
     ["Zunba", "韩国", "守望先锋", "外赛区", "首尔王朝队", false, "世界杯冠军", "坦克", false],
@@ -87,7 +44,7 @@ function work() {
             name: "",
             count: 0
         }]
-    ] //[new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary(),new Dictionary() };
+    ];
     var j = 0;
     for (j = 0; j < 9; j++) {
         for (i = 0; i < models.length; i++) {

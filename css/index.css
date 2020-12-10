@@ -377,6 +377,15 @@ body {
     white-space: normal;
 }
 
+.mask a, .mask a:visited, .mask a:active {
+    text-decoration: none;
+    color: #C8A06A;
+}
+
+.mask a:hover {
+    text-decoration: underline;
+}
+
 .swiper-btn {
     width: 12.5rem;
     height: 3.125rem;
