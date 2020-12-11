@@ -1,7 +1,5 @@
 (function ($) {
-
     $.fn.cntl = function (options) {
-
         /* default settings */
         var settings = $.extend({
             revealbefore: 800,
@@ -9,27 +7,18 @@
             anim_class: 'cntl-animate',
             /* the anim class, this class should have animation rules in css */
         }, options);
-
-
-
-
         return this.each(function () {
-
             var statelist = $(this).find('.cntl-state');
             var bar_fill = $(this).find('.cntl-bar-fill');
             var states = [];
             var tbf = 0;
-
-
             function setupElements() {
                 num = [185,435,750,1080,1400,2000,2450,2745,3050,3300,3650,4050,4300,4600,]/*时间轴各元素的位置*/
 
                 for (var i = 0; i < statelist.length; i++) {
-
                     states[i] = {};
                     states[i]['top'] = num[i] + 100;
                     states[i]['elm'] = $(statelist[i]);
-
                 };
 
                 revealElements();
@@ -57,15 +46,11 @@
                             tbf = h;
                         }
                         bar_fill.height(tbf);
-
                     }
                 };
-
             }
-
             $(window).on('scroll', revealElements);
             $(window).on('load', setupElements)
-
         });
     }
 
