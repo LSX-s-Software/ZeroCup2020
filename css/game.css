@@ -32,17 +32,20 @@ body{
 }
 
 .img{
-    position: absolute;
-    top: 15%;
-    left: 3%;
-    width: 15vw;
-    height: 15vw;
+    position: relative;
+    top: 18%;
+    left: 1%;
+    width: 25%;
+    border-radius: 50%;
+    overflow: hidden;
 }
+
+.img img{width: 100%;}
 
 .ask-menu{
     position: relative;
-    left: 18%;
-    top: 20%;
+    top: -11%;
+    left: 24%;
     width: 35%;
     height: 40%;
 }
@@ -57,25 +60,26 @@ body{
     position: absolute;
     width: 40%;
     height: 60%;
-    top: 5%;
+    top: 9%;
     left: 10%;
 }
 
+
 .button {
-    width: 115px;
+    width: 20%;
 }
 
 .yes{
     position: absolute;
-    left: 53%;
-    top: 3%;
+    left: 55%;
+    top: 8%;
     text-align: center;
 }
 
 .no{
     position: absolute;
-    left: 53%;
-    top: 45%;
+    left: 55%;
+    top: 50%;
     text-align: center;
 }
 
