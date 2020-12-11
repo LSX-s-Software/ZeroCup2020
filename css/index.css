@@ -110,6 +110,7 @@ body {
     transform: translateY(30px);
     opacity: 0;
     transition: all ease-out 0.7s;
+    text-shadow: 0 0 4px #EEBF23;
 }
 
 .screen.s1 .wrapper .smaller, .screen.s4 .wrapper .smaller {
@@ -119,6 +120,7 @@ body {
     transform: translateY(15px);
     opacity: 0;
     transition: all ease-out 0.7s;
+    text-shadow: 0 0 5px #fff;
 }
 
 #s1l2 {
@@ -141,9 +143,9 @@ body {
 
 .promote {
     position: absolute;
-    margin: 15px 0;
+    margin: 1rem 0;
     bottom: 0;
-    font-size: 15px;
+    font-size: 1rem;
     text-align: center;
     display: none;
     left: 50%;
@@ -151,9 +153,13 @@ body {
 }
 
 .promote p {
-    margin: 0;
-    font-size: 13px;
-    letter-spacing: 6px;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.promote #down {
+    width: 5.75rem;
 }
 
 .screen.s1 img#s1bgImg {

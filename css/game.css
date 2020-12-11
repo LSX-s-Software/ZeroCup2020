@@ -61,6 +61,10 @@ body{
     left: 10%;
 }
 
+.button {
+    width: 115px;
+}
+
 .yes{
     position: absolute;
     left: 53%;
