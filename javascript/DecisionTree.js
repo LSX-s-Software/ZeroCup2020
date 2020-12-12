@@ -30,13 +30,24 @@ var models = [
     ["letme", "中国", "英雄联盟", "LPL", "RNG", false, "MSI冠军", "未知", false]
 ];
 
+var question;
 function work() {
     if (models.length == 1) {
-        alert("我猜他是" + models[0][0]);
-        return;
-    }
-    if (models.length == 0) {
-        alert("你猜的人不在名人堂里");
+        $(".photo").css("flex-direction","column-reverse")
+        var img = $('<img>',{
+            src:"./source/img/"+models[0][0]+".png",
+        });
+        var div = $('<div>',{
+            html:"再来一次",
+            class:"button again",
+        });
+        img.appendTo($(".photo"))
+        $("#text").css("font-size",25+"px")
+        $("#text").text(models[0][0]);
+        $(".yes").remove()
+        $(".no").remove()
+        div.appendTo($(".ask-menu"))
+        $(".img").attr("src","./source/img/yes/end.png");
         return;
     }
     var count = [
@@ -86,56 +97,69 @@ function work() {
     // countMax.forEach(ele => {
     //     console.log(ele);
     // })
-    var question = getBest(countBest);
-    var res;
-    switch (question.index) {
-        case 1:
-            res = confirm("你所想的人是" + question.name + "人吗？")
-            break;
-        case 2:
-            res = confirm("你所想的人是" + question.name + "的职业选手吗？")
-            break;
-        case 3:
-            res = confirm("你所想的人参加" + question.name + "联赛吗？")
-            break;
-        case 4:
-            res = confirm("你所想的人退役前或现在在" + question.name + "战队吗？")
-            break;
-        case 5:
-            res = confirm("你所想的人" + (question.name ? "" : "不") + "戴眼镜吗？(以名人堂上的照片为准)")
-            break;
-        case 6:
-            res = confirm("他得过的最高奖项是不是" + question.name + "？")
-            break;
-        case 7:
-            res = confirm("你所想的人是" + question.name + "选手吗？")
-            break;
-        case 8:
-            res = confirm("你所想的人" + (question.name ? "在役" : "已经退役了") + "吗？")
-            break;
-        default:
-            break;
-    }
-    var newModels = [];
-    for (i = 0; i < models.length; i++) {
-        if (res) {
+    question = getBest(countBest);
+    Switch();
+}
+
+$(document).ready(function () {
+    work();
+
+    $(".yes").click(function () {
+        var newModels = [];
+        for (i = 0; i < models.length; i++) {
             if (models[i][question.index] == question.name) {
                 newModels.push(models[i]);
             }
-        } else {
+        }
+        models = newModels;
+        console.log("筛选后的列表");
+        newModels.forEach(ele => {
+            console.log(ele);
+        })
+        var p = $('<p>',{
+            html:Switch(),
+             });
+        p.appendTo($(".information"))
+        var randnum = parseInt(Math.random()*(5)+1);
+        $(".img").attr("src","./source/img/yes/"+randnum+".png");
+        work();
+    })
+
+    $(".no").click(function () {
+        var newModels = [];
+        for (i = 0; i < models.length; i++) {
             if (models[i][question.index] != question.name) {
                 newModels.push(models[i]);
             }
         }
-    }
-    models = newModels;
-    console.log("筛选后的列表");
-    newModels.forEach(ele => {
-        console.log(ele);
+        models = newModels;
+        console.log("筛选后的列表");
+        newModels.forEach(ele => {
+            console.log(ele);
+        })
+        var p = $('<p>',{
+            html:SwitchNo(),
+             });
+        p.appendTo($(".information"))
+        var randnum = parseInt(Math.random()*(5)+1);
+        $(".img").attr("src","./source/img/no/"+randnum+".png");
+        work();
     })
-    work();
-}
-work();
+
+    $(".ask-menu").on("click",".again",function(){
+        window.location.reload()
+    })
+
+    // $(".ask-menu").on("hover",".photo img",function(){
+    //     $(".introduce").css("visibility","visible")
+    // },function(){
+    //     $(".introduce").css("visibility","hidden")
+    // })
+    // $(".ask-menu").on("mouseleave",".photo img",function(){
+    //     $(".introduce").css("visibility","hidden")
+    // })
+})
+
 
 function found(arr, name) {
     for (var i = 0; i < arr.length; i++) {
@@ -179,4 +203,65 @@ function getBest(arr) {
     }
     console.log("best:" + JSON.stringify(bestObj));
     return bestObj;
+}
+function SwitchNo(){
+    switch (question.index) {
+        case 1:
+            $("#text").text("你所想的人是" + question.name + "人吗？")
+            return "你所想的人不是"+question.name+"人";
+        case 2:
+            $("#text").text("你所想的人是" + question.name + "的职业选手吗？")
+            return "你所想的人不是"+question.name+"的职业选手";
+        case 3:
+            $("#text").text("你所想的人参加" + question.name + "联赛吗？")
+            return "你所想的人没参加"+question.name+"联赛";
+        case 4:
+            $("#text").text("你所想的人退役前或现在在" + question.name + "战队吗？")
+            return "你所想的人退役前或现在不在"+question.name+"战队";
+        case 5:
+            $("#text").text("你所想的人" + (question.name ? "" : "不") + "戴眼镜吗？(以名人堂上的照片为准)")
+            return "你所想的人"+(question.name ? "不" : "")+"戴眼镜";
+        case 6:
+            $("#text").text("他得过的最高奖项是不是" + question.name + "？")
+            return "你所想的人得过的最高奖项不是"+question.name;
+        case 7:
+            $("#text").text("你所想的人是" + question.name + "选手吗？")
+            return "你所想的人不是"+question.name+"选手";
+        case 8:
+            $("#text").text("你所想的人" + (question.name ? "在役" : "已经退役了") + "吗？")
+            return "你所想的人"+(question.name ? "已经退役了" : "在役");
+        default:
+            break;
+    }
+}
+
+function Switch(){
+    switch (question.index) {
+        case 1:
+            $("#text").text("你所想的人是" + question.name + "人吗？")
+            return "你所想的人是"+question.name+"人";
+        case 2:
+            $("#text").text("你所想的人是" + question.name + "的职业选手吗？")
+            return "你所想的人是"+question.name+"的职业选手";
+        case 3:
+            $("#text").text("你所想的人参加" + question.name + "联赛吗？")
+            return "你所想的人参加"+question.name+"联赛";
+        case 4:
+            $("#text").text("你所想的人退役前或现在在" + question.name + "战队吗？")
+            return "你所想的人退役前或现在在"+question.name+"战队";
+        case 5:
+            $("#text").text("你所想的人" + (question.name ? "" : "不") + "戴眼镜吗？(以名人堂上的照片为准)")
+            return "你所想的人"+(question.name ? "" : "不")+"戴眼镜";
+        case 6:
+            $("#text").text("他得过的最高奖项是不是" + question.name + "？")
+            return "你所想的人得过的最高奖项是"+question.name;
+        case 7:
+            $("#text").text("你所想的人是" + question.name + "选手吗？")
+            return "你所想的人是"+question.name+"选手";
+        case 8:
+            $("#text").text("你所想的人" + (question.name ? "在役" : "已经退役了") + "吗？")
+            return "你所想的人"+(question.name ? "在役" : "已经退役了");
+        default:
+            break;
+    }
 }
