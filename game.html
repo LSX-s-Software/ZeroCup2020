@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <title>电竞名人堂-猜人小游戏</title>
-    <link rel="stylesheet" type="text/css" href="./css/game.css">
-    <script src="./javascript/jquery-3.5.1.min.js"></script>
-    <!-- <script src="./javascript/DecisionTree.js"></script> -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+  <title>电竞名人堂-猜人小游戏</title>
+  <link rel="stylesheet" type="text/css" href="./css/game.css">
+  <script src="./javascript/jquery-3.5.1.min.js"></script>
+  <script src="./javascript/DecisionTree.js"></script>
 </head>
+
 <body>
-    <div class="banner"><span>电竞名人堂-猜人小游戏</span></div>
-    <div class="img"><img src="./source/img/1.webp"></div>
-    <div class="ask-menu">
-      <svg xmlns="http://www.w3.org/2000/svg" class="ask" viewBox="0 0 405.063 205">
-        <g transform="translate(-273.937 -136)">
-          <g transform="translate(302 136)">
-            <path d="M358.752,205H18.255L0,185.221V19.773L18.252,0H358.745L377,19.779V185.227L358.752,205Z" fill="#505050"/>
-          </g>
-          <path d="M7.812-16.063,30,30H0Z" transform="translate(290 166) rotate(-90)" fill="#505050"/>
+  <!-- <video autoplay loop muted src="../resource/tu/lol/1.mp4"></video> -->
+  <div class="banner"><span>电竞名人堂-猜人小游戏</span></div>
+  <img src="./source/img/yes/start.png" class="img">
+  <div class="ask-menu">
+    <svg xmlns="http://www.w3.org/2000/svg" class="ask" viewBox="0 0 247.063 347">
+      <g transform="translate(-271.937 -136)">
+        <g transform="translate(519 136) rotate(90)">
+          <path d="M330.2,222H16.8L0,200.581V21.413L16.8,0H330.2L347,21.419V200.587L330.2,222Z" fill="#505050" />
         </g>
-      </svg>
-      <img src="" alt="" class="photo">
-      <svg xmlns="http://www.w3.org/2000/svg" class="button yes" viewBox="0 0 114.999 63">
-        <path d="M93,63H22V0H93.226V.323L115,31.5,93.226,62.677V63ZM0,31.5,22,0V63Z" fill="#c8a06a"/>
-        <text transform="translate(55.937 43.512)" fill="#fff" font-size="29"><tspan x="-14.5" y="0">是</tspan></text>
-      </svg>      
-      <svg xmlns="http://www.w3.org/2000/svg" class="button no" viewBox="0 0 114.999 63">
-        <path d="M93,63H22V0H93.226V.323L115,31.5,93.226,62.677V63ZM0,31.5,22,0V63Z" fill="#fff"/>
-        <text transform="translate(56.703 43.512)" font-size="29"><tspan x="-14.5" y="0">否</tspan></text>
-      </svg>      
+        <path d="M7.812-16.063,30,30H0Z" transform="translate(288 166) rotate(-90)" fill="#505050" />
+      </g>
+    </svg>
+
+    <div class="photo">
+      <p id="text"></p>
     </div>
-    <div class="information">
-        <h2>已知</h2>
-        <p>他是个中国人</p>
-        <p>他是英雄联盟选手</p>
-        <p>......</p>
-    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="button yes" viewBox="0 0 114.999 63">
+      <path d="M93,63H22V0H93.226V.323L115,31.5,93.226,62.677V63ZM0,31.5,22,0V63Z" fill="#c8a06a" />
+      <text transform="translate(55.937 43.512)" fill="#fff" font-size="29">
+        <tspan x="-14.5" y="0">对</tspan>
+      </text>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="button no" viewBox="0 0 114.999 63">
+      <path d="M93,63H22V0H93.226V.323L115,31.5,93.226,62.677V63ZM0,31.5,22,0V63Z" fill="#fff" />
+      <text transform="translate(56.703 43.512)" font-size="29">
+        <tspan x="-14.5" y="0">错</tspan>
+      </text>
+    </svg>
+  </div>
+  <!-- <div class="introduce">
+    <ul class="wz data">
+      <img src="./source/icon/award.png" class="award">
+      <li>2018年洲际赛冠军</li>
+      <li>2016年LMS春季赛冠军,LMS夏季赛冠军</li>
+      <li>2018年MSI季中邀请赛冠军</li>
+      <li>2018年德玛西亚杯珠海站冠军</li>
+      <li>2015年IEM台北站冠军 2017年LMS春季赛冠军</li>
+    </ul>
+  </div> -->
+  <div class="information">
+    <h2>已知</h2>
+  </div>
 </body>
+
 </html>

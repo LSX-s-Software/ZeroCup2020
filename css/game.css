@@ -2,12 +2,25 @@ html{height: 100%;width: 100%;}
 body{
     height: 100%;
     width: 100%;
-    background-color: #1B1B1B;
+    /* background-color: #1B1B1B; */
+    background-image: url('../source/img/2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
     margin: 0;
     padding: 0;
     color: #FFFFFF;
     font-family: SourceHanSansCN-Regular;
+    cursor: default;
+    overflow: hidden;
 }
+
+/* video{
+    z-index: -999;
+    height: 100%;
+    width: 250%;
+    position: absolute;  
+    top: 0px;  
+} */
 
 .banner {
     z-index: 100;
@@ -33,11 +46,12 @@ body{
 
 .img{
     position: relative;
-    top: 18%;
-    left: 1%;
-    width: 25%;
+    top: 16%;
+    left: 10%;
+    width: 200px;
     border-radius: 50%;
     overflow: hidden;
+    /* border: 1px solid white; */
 }
 
 .img img{width: 100%;}
@@ -46,54 +60,112 @@ body{
     position: relative;
     top: -11%;
     left: 24%;
-    width: 35%;
-    height: 40%;
+    width: 300px;
+    height: 420px;
 }
 
 .ask{
     position: absolute;
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
 }
 
 .photo{
     position: absolute;
-    width: 40%;
-    height: 60%;
-    top: 9%;
-    left: 10%;
+    width: 80%;
+    height: 75%;
+    top: 4%;
+    left:15%;
+    display: flex;
+    flex-direction: column;
 }
 
+.photo img{height: 90%;width: 100%;object-fit: contain;}
+.photo p{margin: 0;font-size: 30px;height: 10%;text-align: center;}
 
 .button {
-    width: 20%;
+    width: 35%;
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
 }
 
 .yes{
-    position: absolute;
-    left: 55%;
-    top: 8%;
-    text-align: center;
+    left: 16%;
+    top: 81%;
 }
 
 .no{
-    position: absolute;
-    left: 55%;
-    top: 50%;
-    text-align: center;
+    left: 60%;
+    top: 81%;
+}
+
+.again{
+    top: 82%;
+    width: 80%;
+    font-size: 25px;
+    left: 15%;
+    background-color: #c8a06a;
+    color: #FFFFFF;
 }
 
 .information{
     position: absolute;
-    top: 15%;
-    left: 65%;
+    top: 20%;
+    left: 70%;
     width: 20%;
-    height: 65%;
+    height: 70%;
     background-color: #414141;
+    border-radius: 5%;
 }
 
-.information h2{margin-left: 5%;}
+.information h2{margin: 5% 0 0 5%;}
 .information p{margin: 2% 0 0 5%;}
+
+/* .introduce{
+    visibility: hidden;
+    visibility: hidden;
+    position: absolute;
+    z-index: 5;
+    top: 45%;
+    left: 26%;
+    font-size: 10px;
+}
+
+.award {
+    width: 1.75rem;
+    object-fit: contain;
+    float: left;
+    margin: 8px 8px 8px 0;
+}
+
+.wz {
+    color: white;
+    font-size: 2rem;
+    display: block;
+    height: 80px;
+    padding: 15% 0 10% 0;
+    word-break: break-all;
+    word-wrap: break-word;
+    animation-name: fadeIn 0.75s;
+    animation-delay: 0s;
+    margin: 0;
+  }
+  
+
+.data {
+    padding: 0 1rem 1rem;
+    height: auto;
+    font-size: 0.75rem;
+    text-align: left;
+    list-style: none;
+} */
+  
+
+/* .photo:hover .introduce:first-child{
+    visibility: visible;
+    background-color: black;
+} */
 
 @font-face {
     font-family: "HYShangWeiShouShuW-Regular";
