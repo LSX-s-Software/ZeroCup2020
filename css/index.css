@@ -101,22 +101,23 @@ body {
     justify-content: center;
     align-items: center;
     overflow-y: visible;
+    z-index: 3;
 }
 
 .screen.s1 .wrapper .bigger, .screen.s4 .wrapper .bigger {
     font-family: HYShangWeiShouShuW-Regular;
-    color: rgba(200, 160, 106, 1);
-    font-size: 6rem;
-    transform: translateY(30px);
+    color: #EEBF23;
+    font-size: 7rem;
+    transform: translateY(20px);
     opacity: 0;
     transition: all ease-out 0.7s;
-    text-shadow: 0 0 4px #EEBF23;
+    text-shadow: 0 0 5px rgb(200, 160, 106);
 }
 
 .screen.s1 .wrapper .smaller, .screen.s4 .wrapper .smaller {
     font-family: HYShangWeiShouShuW-Regular;
     color: rgba(255, 255, 255, 1);
-    font-size: 4.5rem;
+    font-size: 5rem;
     transform: translateY(15px);
     opacity: 0;
     transition: all ease-out 0.7s;
@@ -162,12 +163,12 @@ body {
     width: 5.75rem;
 }
 
-.screen.s1 img#s1bgImg {
+#bgVideo {
     display: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 0;
     position: absolute;
 }
 
@@ -457,7 +458,7 @@ body {
     justify-content: center;
 }
 
-video {
+.video-section video {
     /* transition: all 0.1s; */
     z-index: inherit;
     height: 146vh;
@@ -674,13 +675,41 @@ svg.sider {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.screen.s3 .imgContainer {
+    width: 50%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity ease-out 0.4s;
+}
+
+.screen.s3 .imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    outline: none;
+    filter: brightness(0.4);
+    transition: filter ease-out 0.4s;
+}
+
+.screen.s3 .imgContainer img:hover, .screen.s3 .imgContainer img.hover {
+    filter: brightness(0.7);
 }
 
 .screen.s3 .wrapper {
     display: flex;
-    width: 55vw;
+    width: 70%;
     justify-content: space-between;
     align-items: center;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .screen.s3 .wrapper svg {

@@ -91,7 +91,7 @@ function easeInOutCubic(x) {
     return x < 0.5 ? 4 * x * x * x : 1 - pow(-2 * x + 2, 3) / 2;
 }
 
-var animated = { s2: false, s3: false,  };
+let animated = { s2: false, s3: false };
 window.addEventListener('scroll', () => {
     let scrolled = (document.documentElement.scrollTop) / (document.documentElement.clientHeight); // 当前在第几分屏
     //分屏：0-1：游戏与电子竞技 1-2两个查看详情图 2-3视频全屏->缩小
@@ -112,10 +112,16 @@ window.addEventListener('scroll', () => {
     if (scrolled > 1.75 && scrolled < 3.75) sides[2].classList.add("colored");
     if (scrolled > 3.75 && scrolled < 4.5) sides[3].classList.add("colored");
     if (scrolled > 4.5) sides[4].classList.add("colored");
-    //----第一屏提示----
+    //----第一屏----
     if (timer != -1 && scrolled > 0.8) {
         clearInterval(timer);
         timer = -1;
+        document.getElementById("bgVideo").pause();
+        $("#bgVideo").css("display", "none");
+    }
+    if (timer == -1 && scrolled < 0.5) {
+        $("#bgVideo").css("display", "block");
+        document.getElementById("bgVideo").play();
     }
     //----banner附加文字----
     if (scrolled > 1.75) {
@@ -177,6 +183,9 @@ window.addEventListener('scroll', () => {
         for (item of s3wrapper) {
             item.style.opacity = "1";
         }
+        $(".imgContainer").css("opacity", 1);
+        $("#b1").text("电子");
+        $("#b2").text("竞技");
     }
     if (scrolled > 4.5) {
         $("#s5l1, #s5l2, #s5l3").css({
@@ -186,17 +195,16 @@ window.addEventListener('scroll', () => {
     }
 })
 
-var timer;
+let timer = -1;
 $(document).ready(function () {
-    $("#s1bgImg").fadeIn(500, function () {
-        $("#s1l1, #s1l2, #s1l3").css({
-            opacity: 1,
-            transform: "none"
-        });
-        setTimeout(() => {
-            $(".promote").fadeIn(2000);
-        }, 1500);
+    $("#s1l1, #s1l2, #s1l3").css({
+        opacity: 1,
+        transform: "none"
     });
+    setTimeout(() => {
+        $("#bgVideo").fadeIn(1000);
+        $(".promote").fadeIn(2000);
+    }, 1500);
     timer = setInterval(function () {
         $(".promote").animate({
             bottom: "+=50px"
@@ -212,7 +220,7 @@ $(document).ready(function () {
             next();
         });
     }, 10000);
-    var mySwiper = new Swiper('.swiper-container', {
+    let mySwiper = new Swiper('.swiper-container', {
         direction: 'horizontal',
         effect: 'slide',
         observeParents: true,
@@ -252,13 +260,13 @@ $(document).ready(function () {
             }
         }
     });
-    var status = [false, false];
+    let status = [false, false];
     let slides = document.querySelectorAll('.swiper-container .skew-fix img');
     $("#more1").click(function (e) {
         e.preventDefault();
         let line = document.querySelector('.screen.s2 .wrapper .skew');
         if (!status[0]) {
-            var i = 0;
+            let i = 0;
             slides.forEach(slide => {
                 if (i == 0) slide.setAttribute("src", "./source/img/game/6.jpg");
                 else slide.setAttribute("src", "./source/img/game/" + i + ".jpg");
@@ -290,9 +298,9 @@ $(document).ready(function () {
         e.preventDefault();
         let line = document.querySelector('.screen.s2 .wrapper .skew');
         if (!status[1]) {
-            var i = GAME_DATA.single.length - 1;
+            let i = GAME_DATA.single.length - 1;
             slides.forEach(slide => {
-                if (i == 6) slide.setAttribute("src", "./source/img/game/" + (2*i) + ".jpg");
+                if (i == 6) slide.setAttribute("src", "./source/img/game/" + (2 * i) + ".jpg");
                 else slide.setAttribute("src", "./source/img/game/" + i + ".jpg");
                 i++;
             });
@@ -345,7 +353,7 @@ $(document).ready(function () {
         $(".closeBtn").fadeIn();
         $("#b1").text("电竞");
         $("#b2").text("名人堂");
-        $(".sidebar").css("filter", "blur(15px)");
+        $(".sidebar, .imgContainer").css("filter", "blur(10px)");
     });
     $("#tl").click(function (e) {
         e.preventDefault();
@@ -357,7 +365,7 @@ $(document).ready(function () {
     });
     $(".closeBtn").click(function (e) {
         e.preventDefault();
-        $(".sidebar").css("filter", "none");
+        $(".sidebar, .imgContainer").css("filter", "none");
         $("#waterflow").fadeOut();
         $("#timeline").fadeOut();
         $(".closeBtn").fadeOut();
@@ -370,4 +378,16 @@ $(document).ready(function () {
     }, function (e) {
         $(".text-view." + e.currentTarget.classList[1]).removeClass("hover");
     });
+    $("#hof").hover(function () {
+        $("#iC1 img").addClass("hover");
+    }, function () {
+        $("#iC1 img").removeClass("hover");
+    }
+    );
+    $("#tl").hover(function () {
+        $("#iC2 img").addClass("hover");
+    }, function () {
+        $("#iC2 img").removeClass("hover");
+    }
+    );
 });
