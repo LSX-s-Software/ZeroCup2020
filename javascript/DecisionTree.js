@@ -42,8 +42,9 @@ function work() {
             class:"button again",
         });
         img.appendTo($(".photo"))
-        $("#text").css("font-size",25+"px")
-        $("#text").text(models[0][0]);
+        $(".ask-menu-start").hide()
+        $(".ask-menu").show()
+        $(".name").text(models[0][0]);
         $(".yes").remove()
         $(".no").remove()
         div.appendTo($(".ask-menu"))

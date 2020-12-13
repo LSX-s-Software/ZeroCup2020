@@ -13,7 +13,7 @@
             var states = [];
             var tbf = 0;
             function setupElements() {
-                num = [185,435,750,1080,1400,2000,2450,2745,3050,3300,3650,4050,4300,4600,]/*时间轴各元素的位置*/
+                num = [185, 435, 750, 1080, 1400, 2000, 2450, 2745, 3050, 3300, 3650, 4050, 4300, 4600,]/*时间轴各元素的位置*/
 
                 for (var i = 0; i < statelist.length; i++) {
                     states[i] = {};
@@ -33,9 +33,7 @@
                 for (var i = 0; i < states.length; i++) {
 
                     if (states[i].top > windowtop && states[i].top < windowbtm) {
-                        if (
-                            !states[i].elm.hasClass(settings.anim_class) &&
-                            $.isFunction(settings.onreveal)) {
+                        if (!states[i].elm.hasClass(settings.anim_class) && $.isFunction(settings.onreveal)) {
                             settings.onreveal.call(this, states[i].elm);
                         }
 

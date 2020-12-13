@@ -66,7 +66,7 @@ body {
   word-wrap: break-word;
   animation-name: fadeIn 0.75s;
   animation-delay: 0s;
-  background-color: #707070;
+  background-color: #505050;
   margin: 0;
 }
 
@@ -121,6 +121,7 @@ body {
 .main-item:hover .data {
   display: block;
   color: white;
+  background-color: #707070;
 }
 
 .main-item:hover {
