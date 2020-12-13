@@ -85,8 +85,17 @@ body{
     flex-direction: column;
 }
 
-.photo img{height: 90%;width: 100%;object-fit: contain;}
-.photo p{margin: 0;font-size: 25px;height: 10%;text-align: center;}
+.photo img{
+    height: 90%;
+    width: 100%;
+    object-fit: contain;
+}
+.photo p{
+    margin: 0;
+    font-size: 25px;
+    height: 10%;
+    text-align: center;
+}
 
 .button {
     width: 25%;
@@ -115,7 +124,13 @@ body{
     flex-direction: column;
 }
 
-.text p{margin: 0;font-size: 30px;height: 10%;text-align: center;}
+.text p{
+    margin: 0;
+    font-size: 25px;
+    height: 10%;
+    text-align: center;
+    display: none;
+}
 
 .again{
     top: 82%;
@@ -137,7 +152,7 @@ body{
 }
 
 .information h2{margin: 5% 0 0 5%;}
-.information p{margin: 2% 0 0 5%;}
+.information p{margin: 2% 0 0 5%;display: none;}
 
 @font-face {
     font-family: "HYShangWeiShouShuW-Regular";

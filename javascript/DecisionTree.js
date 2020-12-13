@@ -41,13 +41,13 @@ function work() {
             html:"再来一次",
             class:"button again",
         });
-        img.appendTo($(".photo"))
         $(".ask-menu-start").hide()
-        $(".ask-menu").show()
+        $(".ask-menu").fadeIn(1000)
+        img.appendTo($(".photo"))
+        div.appendTo($(".ask-menu"))
         $(".name").text(models[0][0]);
         $(".yes").remove()
         $(".no").remove()
-        div.appendTo($(".ask-menu"))
         $(".img").attr("src","./source/img/yes/end.png");
         return;
     }
@@ -79,12 +79,7 @@ function work() {
     }
     console.log("计数结果：");
     console.log(count);
-    // count.forEach(ele => {
-    //     ele.forEach(e => {
-    //         console.log(e);
-    //     })
-    //     console.log("");
-    // })
+
     var max = {
         name: "",
         count: ""
@@ -94,17 +89,15 @@ function work() {
         countBest[i] = getBest(count[i]);
     }
     console.log("取最接近半数的：");
-    console.log(countBest);
-    // countMax.forEach(ele => {
-    //     console.log(ele);
-    // })
+
     question = getBest(countBest);
     Switch();
 }
 
+
 $(document).ready(function () {
     work();
-
+    $("#text").fadeIn(1000);
     $(".yes").click(function () {
         var newModels = [];
         for (i = 0; i < models.length; i++) {
@@ -121,6 +114,7 @@ $(document).ready(function () {
             html:Switch(),
              });
         p.appendTo($(".information"))
+        p.fadeIn(1000);
         var randnum = parseInt(Math.random()*(5)+1);
         $(".img").attr("src","./source/img/yes/"+randnum+".png");
         work();
@@ -142,6 +136,7 @@ $(document).ready(function () {
             html:SwitchNo(),
              });
         p.appendTo($(".information"))
+        p.fadeIn(1000);
         var randnum = parseInt(Math.random()*(5)+1);
         $(".img").attr("src","./source/img/no/"+randnum+".png");
         work();
@@ -150,15 +145,6 @@ $(document).ready(function () {
     $(".ask-menu").on("click",".again",function(){
         window.location.reload()
     })
-
-    // $(".ask-menu").on("hover",".photo img",function(){
-    //     $(".introduce").css("visibility","visible")
-    // },function(){
-    //     $(".introduce").css("visibility","hidden")
-    // })
-    // $(".ask-menu").on("mouseleave",".photo img",function(){
-    //     $(".introduce").css("visibility","hidden")
-    // })
 })
 
 
@@ -205,31 +191,59 @@ function getBest(arr) {
     console.log("best:" + JSON.stringify(bestObj));
     return bestObj;
 }
+
 function SwitchNo(){
+    var pask = $('<p>',{
+        id:"text",
+    });
     switch (question.index) {
         case 1:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("你所想的人是" + question.name + "人吗？")
+            pask.fadeIn(800);
             return "你所想的人不是"+question.name+"人";
         case 2:
-            $("#text").text("你所想的人是" + question.name + "的职业选手吗？")
+            $("#text").remove()
+            pask.appendTo($(".text"))
+            $("#text").text("你所想的人是" + question.name + "人吗？")
+            pask.fadeIn(800);
             return "你所想的人不是"+question.name+"的职业选手";
         case 3:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("你所想的人参加" + question.name + "联赛吗？")
+            pask.fadeIn(800);
             return "你所想的人没参加"+question.name+"联赛";
         case 4:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("他退役前或现在在" + question.name + "战队吗？")
+            pask.fadeIn(800);
             return "你所想的人退役前或现在不在"+question.name+"战队";
         case 5:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("那他" + (question.name ? "" : "不") + "戴眼镜吗？(以名人堂上的照片为准)")
+            pask.fadeIn(800);
             return "你所想的人"+(question.name ? "不" : "")+"戴眼镜";
         case 6:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("他得过的最高冠军奖项是" + question.name + "吗？")
+            pask.fadeIn(800);
             return "你所想的人得过的最高奖项不是"+question.name;
         case 7:
-            $("#text").text("那...他是" + question.name + "选手吗？")
+            $("#text").remove()
+            pask.appendTo($(".text"))
+            $("#text").text("那..他是" + question.name + "选手吗？")
+            pask.fadeIn(800);
             return "你所想的人不是"+question.name+"选手";
         case 8:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("那...你所想的人" + (question.name ? "在役" : "已经退役了") + "吗？")
+            pask.fadeIn(800);
             return "你所想的人"+(question.name ? "已经退役了" : "在役");
         default:
             break;
@@ -237,30 +251,57 @@ function SwitchNo(){
 }
 
 function Switch(){
+    var pask = $('<p>',{
+        id:"text",
+    });
     switch (question.index) {
         case 1:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("你所想的人是" + question.name + "人吗？")
+            pask.fadeIn(800);
             return "你所想的人是"+question.name+"人";
         case 2:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("你所想的人是" + question.name + "的职业选手吗？")
+            pask.fadeIn(800);
             return "你所想的人是"+question.name+"的职业选手";
         case 3:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("你所想的人参加" + question.name + "联赛吗？")
+            pask.fadeIn(800);
             return "你所想的人参加"+question.name+"联赛";
         case 4:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("他退役前或现在在" + question.name + "战队吗？")
+            pask.fadeIn(800);
             return "你所想的人退役前或现在在"+question.name+"战队";
         case 5:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("那他" + (question.name ? "" : "不") + "戴眼镜吗？(以名人堂上的照片为准)")
+            pask.fadeIn(800);
             return "你所想的人"+(question.name ? "" : "不")+"戴眼镜";
         case 6:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("他得过的最高冠军奖项是" + question.name + "吗？")
+            pask.fadeIn(800);
             return "你所想的人得过的最高奖项是"+question.name;
         case 7:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("那..他是" + question.name + "选手吗？")
+            pask.fadeIn(800);
             return "你所想的人是"+question.name+"选手";
         case 8:
+            $("#text").remove()
+            pask.appendTo($(".text"))
             $("#text").text("那...你所想的人" + (question.name ? "在役" : "已经退役了") + "吗？")
+            pask.fadeIn(800);
             return "你所想的人"+(question.name ? "已经退役了" : "在役");
         default:
             break;

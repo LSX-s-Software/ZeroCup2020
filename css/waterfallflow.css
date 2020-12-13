@@ -125,7 +125,7 @@ body {
 }
 
 .main-item:hover {
-    transition: all 0.5s;
+  transition: all 0.5s;
   transform: translateY(-10px);
   background-color: #707070;
 }

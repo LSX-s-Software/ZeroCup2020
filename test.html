@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript" src="./"
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".btn1").click(function(){
+  //调用bai淡出
+  $(".new").fadeOut(3000)
+  });
+  $(".btn2").click(function(){
+  //先添加元du素  不显示
+  $("body").append("<p class='new'’ style='display:none;'>动态添zhi加的dao内容</p>");
+  //调用淡入zhuan
+  $(".new").fadeIn(3000);
+  });
+});
+</script>
+</head>
+<body>
+ 
+<button class="btn1">淡出</button>
+<button class="btn2">添加元素并shu淡入</button>
+</body>
+</html>
