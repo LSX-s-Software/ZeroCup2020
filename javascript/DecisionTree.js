@@ -23,7 +23,7 @@ var models = [
     ["xiaohu", "中国", "英雄联盟", "LPL", "RNG", false, "MSI冠军", "中单", true],
     ["ming", "中国", "英雄联盟", "LPL", "RNG", false, "MSI冠军", "下路", true],
     ["Weixiao", "中国", "英雄联盟", "LPL", "WE", false, "IPL5冠军", "下路", false],
-    ["Uzi", "中国", "英雄联盟", "LPL", "RNG", true, "世界总决赛亚军", "下路", false],
+    ["Uzi", "中国", "英雄联盟", "LPL", "RNG", true, "MSI冠军", "下路", false],
     ["Clearlove", "中国", "英雄联盟", "LPL", "EDG", false, "MSI冠军", "打野", false],
     ["Jackeylove", "中国", "英雄联盟", "LPL", "TES", false, "世界总决赛冠军", "下路", true],
     ["mlxg", "中国", "英雄联盟", "LPL", "RNG", true, "MSI冠军", "打野", false],
@@ -217,19 +217,19 @@ function SwitchNo(){
             $("#text").text("你所想的人参加" + question.name + "联赛吗？")
             return "你所想的人没参加"+question.name+"联赛";
         case 4:
-            $("#text").text("你所想的人退役前或现在在" + question.name + "战队吗？")
+            $("#text").text("他退役前或现在在" + question.name + "战队吗？")
             return "你所想的人退役前或现在不在"+question.name+"战队";
         case 5:
-            $("#text").text("你所想的人" + (question.name ? "" : "不") + "戴眼镜吗？(以名人堂上的照片为准)")
+            $("#text").text("那他" + (question.name ? "" : "不") + "戴眼镜吗？(以名人堂上的照片为准)")
             return "你所想的人"+(question.name ? "不" : "")+"戴眼镜";
         case 6:
-            $("#text").text("他得过的最高奖项是不是" + question.name + "？")
+            $("#text").text("他得过的最高冠军奖项是" + question.name + "吗？")
             return "你所想的人得过的最高奖项不是"+question.name;
         case 7:
-            $("#text").text("你所想的人是" + question.name + "选手吗？")
+            $("#text").text("那...他是" + question.name + "选手吗？")
             return "你所想的人不是"+question.name+"选手";
         case 8:
-            $("#text").text("你所想的人" + (question.name ? "在役" : "已经退役了") + "吗？")
+            $("#text").text("那...你所想的人" + (question.name ? "在役" : "已经退役了") + "吗？")
             return "你所想的人"+(question.name ? "已经退役了" : "在役");
         default:
             break;
@@ -248,20 +248,20 @@ function Switch(){
             $("#text").text("你所想的人参加" + question.name + "联赛吗？")
             return "你所想的人参加"+question.name+"联赛";
         case 4:
-            $("#text").text("你所想的人退役前或现在在" + question.name + "战队吗？")
+            $("#text").text("他退役前或现在在" + question.name + "战队吗？")
             return "你所想的人退役前或现在在"+question.name+"战队";
         case 5:
-            $("#text").text("你所想的人" + (question.name ? "" : "不") + "戴眼镜吗？(以名人堂上的照片为准)")
+            $("#text").text("那他" + (question.name ? "" : "不") + "戴眼镜吗？(以名人堂上的照片为准)")
             return "你所想的人"+(question.name ? "" : "不")+"戴眼镜";
         case 6:
-            $("#text").text("他得过的最高奖项是不是" + question.name + "？")
+            $("#text").text("他得过的最高冠军奖项是" + question.name + "吗？")
             return "你所想的人得过的最高奖项是"+question.name;
         case 7:
-            $("#text").text("你所想的人是" + question.name + "选手吗？")
+            $("#text").text("那..他是" + question.name + "选手吗？")
             return "你所想的人是"+question.name+"选手";
         case 8:
-            $("#text").text("你所想的人" + (question.name ? "在役" : "已经退役了") + "吗？")
-            return "你所想的人"+(question.name ? "在役" : "已经退役了");
+            $("#text").text("那...你所想的人" + (question.name ? "在役" : "已经退役了") + "吗？")
+            return "你所想的人"+(question.name ? "已经退役了" : "在役");
         default:
             break;
     }
