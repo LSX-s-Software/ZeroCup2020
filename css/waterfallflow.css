@@ -146,3 +146,33 @@ body {
     opacity: 1;
   }
 }
+.goto {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #C8A06A;
+    position: fixed;
+    right: 30px;
+    bottom: 30px; 
+    z-index: 999999;   
+    transition: all 0.5s;
+}
+.goto.on {
+    transform: scaleX(2.8);
+    transition: all 0.4s;
+    border-radius: 10%;
+}
+.game {
+    opacity: 0;
+    transition: all 1s;
+    position: fixed;
+    right: 30px;
+    bottom: 30px; 
+    transform: translate(30%, -35%);
+    z-index: 1000000;
+    cursor: pointer; 
+    color: #FFFFFF;
+    /* color: black; */
+    transition-delay: 0.35s;
+}
