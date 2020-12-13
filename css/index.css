@@ -491,8 +491,8 @@ body {
 }
 
 .sider {
-    width: 13.2rem;
-    height: 11.4375rem;
+    width: 11rem;
+    height: 11rem;
     visibility: hidden;
     z-index: 6;
 }
@@ -518,11 +518,15 @@ body {
 
 .text-view.hover.left {
     transform: scale(1.4) translateX(calc(13.1rem)) translateY(15px);
+    width: auto;
+    height: auto;
     opacity: 1;
 }
 
 .text-view.hover.right {
     transform: scale(1.4) translateX(calc(-13.2rem)) translateY(15px);
+    width: auto;
+    height: auto;
     opacity: 1;
 }
 
@@ -540,9 +544,9 @@ svg.sider {
 }
 
 .sd1 {
+    position: absolute;
     top: 20vh;
-    left: 12.8vw;
-    /* transition: all 1s; */
+    left: 10.8vw;
 }
 
 @keyframes getin1 {
@@ -555,16 +559,16 @@ svg.sider {
 
     100% {
         top: 20vh;
-        left: 12.8vw;
-        width: 13.2rem;
-        height: 11.4375rem;
+        left: 10.8vw;
+        width: 11rem;
+        height: 11rem;
     }
 }
 
 .sd2 {
-    top: calc(20vh + 28.6vh);
-    left: 7.9vw;
-    /* transition: all 1s;*/
+    position: absolute;
+    top: 48.6vh;
+    left: 5.9vw;
 }
 
 @keyframes getin2 {
@@ -577,16 +581,16 @@ svg.sider {
 
     100% {
         top: 48.6vh;
-        left: 7.9vw;
-        width: 13.2rem;
-        height: 11.4375rem;
+        left: 5.9vw;
+        width: 11rem;
+        height: 11rem;
     }
 }
 
 .sd3 {
-    top: calc(20vh + 57.2vh);
-    left: 12vw;
-    /* transition: all 1s;*/
+    position: absolute;
+    top: 77.2vh;
+    left: 10vw;
 }
 
 @keyframes getin3 {
@@ -599,16 +603,16 @@ svg.sider {
 
     100% {
         top: 77.2vh;
-        left: 12vw;
-        width: 13.2rem;
-        height: 11.4375rem;
+        left: 10vw;
+        width: 11rem;
+        height: 11rem;
     }
 }
 
 .sd4 {
-    top: calc(20vh);
-    right: 12.8vw;
-    /* transition: all 1s;*/
+    position: absolute;
+    top: 20vh;
+    right: 10.8vw;
 }
 
 @keyframes getin4 {
@@ -621,16 +625,16 @@ svg.sider {
 
     100% {
         top: 20vh;
-        right: 12.8vw;
-        width: 13.2rem;
-        height: 11.4375rem;
+        right: 10.8vw;
+        width: 11rem;
+        height: 11rem;
     }
 }
 
 .sd5 {
-    top: calc(20vh + 28.6vh);
-    right: 7.9vw;
-    /* transition: all 1s;*/
+    position: absolute;
+    top: 48.6vh;
+    right: 5.9vw;
 }
 
 @keyframes getin5 {
@@ -643,16 +647,16 @@ svg.sider {
 
     100% {
         top: 48.6vh;
-        right: 7.9vw;
-        width: 13.2rem;
-        height: 11.4375rem;
+        right: 5.9vw;
+        width: 11rem;
+        height: 11rem;
     }
 }
 
 .sd6 {
-    top: calc(20vh + 57.2vh);
-    right: 12vw;
-    /* transition: all 1s;*/
+    position: absolute;
+    top: 77.2vh;
+    right: 10vw;
 }
 
 @keyframes getin6 {
@@ -665,9 +669,9 @@ svg.sider {
 
     100% {
         top: 77.2vh;
-        right: 12vw;
-        width: 13.2rem;
-        height: 11.4375rem;
+        right: 10vw;
+        width: 11rem;
+        height: 11rem;
     }
 }
 
