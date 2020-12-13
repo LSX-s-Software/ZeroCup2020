@@ -95,8 +95,8 @@ function work() {
     Switch();
 }
 
-
 $(document).ready(function () {
+    alert("Hi! 我是拥有读心术的人工智能大E，能够猜出来你心中想的名人堂选手喔~现在你可以回去看看名人堂，然后选一个喜欢的选手，你只要回答我问题的答案是“对”还是“错”，我就能猜到你猜的是谁喔，你相信吗？");
     work();
     $("#text").fadeIn(1000);
     $(".yes").click(function () {
@@ -154,21 +154,6 @@ function found(arr, name) {
         if (arr[i].name == name) return i;
     }
     return -1;
-}
-
-function getMax(arr) {
-    var maxObj = {
-        name: "",
-        count: 0,
-        index: 0
-    };
-    for (var j = 0; j < arr.length; j++) {
-        if (arr[j].count > maxObj.count) {
-            maxObj = arr[j];
-            maxObj.index = j;
-        }
-    }
-    return maxObj;
 }
 
 function getBest(arr) {

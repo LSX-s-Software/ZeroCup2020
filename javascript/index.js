@@ -144,25 +144,21 @@ window.addEventListener('scroll', () => {
     if (scrolled < 2) {
         video.style.width = "106.52vw"; // 1944 / 18.25 + 'vw';
         img.style.width = "107.56vw"; // 1963 / 18.25 + 'vw';
-        img.style.height = "164.48vh"; // 1454 / 8.84 + 'vh';
     }
     if (scrolled > 2 && scrolled < 3) {
         let width = 747 + 1197 * (1 - easeInOutCubic(scrolled - 2)); // 747 + (1944 - 747) * (1 - easeInOutCubic(scrolled - 2));
         video.style.width = width / 18.25 + 'vw';
         img.style.width = width * 1.01 / 18.25 + 'vw';
-        img.style.height = width / WHRate * 0.15 + 'vh'; // width / WHRate * 1.33 / 8.84 + 'vh';
     }
     if (scrolled > 3) {
         video.style.width = "40.93vw"; // 747 / 18.25 + 'vw';
         img.style.width = "41.315vw"; // 754 / 18.25 + 'vw';
-        img.style.height = "63.122vh"; // 558 / 8.84 + 'vh';
     }
     if (!animated["s3"] && scrolled > 2.9) {
         let i = 1;
         for (sider of siders) {
             sider.style.animation = "getin" + i + " 1s";
             sider.style.visibility = "visible";
-            // console.log("getin" + i + " 1s");
             i++;
         }
         animated["s3"] = true;
