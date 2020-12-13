@@ -176,3 +176,26 @@ body {
     /* color: black; */
     transition-delay: 0.35s;
 }
+
+.arrow {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    right: 4px;
+    bottom: 60px; 
+    /* transform: translate(30%, -35%); */
+    z-index: 1000000;
+    animation: move 1s infinite;
+}
+
+@keyframes move { 
+    0% {             
+        transform: translate(0px, 0px);            
+     }            
+     50% {                
+        transform: translate(0px, -10px);            
+     }            
+     100% {                
+        transform: translate(0px, 0px);
+     }
+}
