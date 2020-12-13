@@ -36,7 +36,7 @@ function work() {
     if (models.length == 1) {
         $(".photo").css("flex-direction","column-reverse")
         var img = $('<img>',{
-            src:"./source/img/"+models[0][0]+".png",
+            src:"./source/img/player/"+models[0][0]+".png",
         });
         var div = $('<div>',{
             html:"再来一次",
