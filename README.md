@@ -1,5 +1,7 @@
 # ZeroCup2020
-武汉大学2020年零杯参赛作品
+武汉大学2020年零杯零组**return 0;组**参赛作品
+
+> 本README撰写于初赛提交作品前，后续的更改没有全部更新到此README内。
 
 ## 一. 综述
 
@@ -98,3 +100,7 @@ GitHub issue记录
 ![实例1.png](https://i.loli.net/2020/12/04/lLmne79yqAJrQPX.png)
 
 ![瀑布流](https://i.loli.net/2020/12/04/pxg6ak7v5KyidVO.png)
+
+------
+
+> 由于比赛时间紧迫、技术水平有限等原因，本网页存在一些大大小小的bug，~~欢迎大家寻宝（bushi~~敬请见谅！
