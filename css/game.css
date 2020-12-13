@@ -5,7 +5,7 @@ body{
     /* background-color: #1B1B1B; */
     background-image: url('../source/img/2.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%; 
+    background-size: cover;
     margin: 0;
     padding: 0;
     color: #FFFFFF;
@@ -46,7 +46,7 @@ body{
 
 .img{
     position: relative;
-    top: 16%;
+    top: 120px;
     left: 10%;
     width: 200px;
     border-radius: 50%;
