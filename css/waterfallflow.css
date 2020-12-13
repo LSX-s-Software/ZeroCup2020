@@ -135,17 +135,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .goto {
     width: 32px;
     height: 32px;
@@ -173,7 +162,6 @@ body {
     z-index: 1000000;
     cursor: pointer; 
     color: #FFFFFF;
-    /* color: black; */
     transition-delay: 0.35s;
 }
 
@@ -183,7 +171,6 @@ body {
     position: fixed;
     right: 4px;
     bottom: 60px; 
-    /* transform: translate(30%, -35%); */
     z-index: 1000000;
     animation: move 1s infinite;
 }
@@ -198,4 +185,16 @@ body {
      100% {                
         transform: translate(0px, 0px);
      }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

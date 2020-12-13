@@ -513,20 +513,15 @@ body {
     word-break:normal;
     white-space: pre-wrap;
     font-size: 0.7rem;
-    /* rgba(212, 211, 211, 0.253); */
 }
 
 .text-view.hover.left {
     transform: scale(1.4) translateX(calc(13.1rem)) translateY(15px);
-    width: auto;
-    height: auto;
     opacity: 1;
 }
 
 .text-view.hover.right {
     transform: scale(1.4) translateX(calc(-13.2rem)) translateY(15px);
-    width: auto;
-    height: auto;
     opacity: 1;
 }
 
@@ -728,7 +723,6 @@ iframe {
     width: 85%;
     height: calc(100vh - 4.25rem);
     background-color: rgba(46, 46, 46, 1);
-    /* backdrop-filter: blur(10px); */
     font-family: "SourceHanSansCN-Regular";
     display: none;
     position: fixed;

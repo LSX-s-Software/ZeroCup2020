@@ -1,11 +1,8 @@
 (function ($) {
     $.fn.cntl = function (options) {
-        /* default settings */
         var settings = $.extend({
             revealbefore: 800,
-            /* this is the amount of "scroll padding" to allow (the more, the later the state will be revealed) */
             anim_class: 'cntl-animate',
-            /* the anim class, this class should have animation rules in css */
         }, options);
         return this.each(function () {
             var statelist = $(this).find('.cntl-state');

@@ -32,6 +32,7 @@ var models = [
 
 var question;
 function work() {
+    //结果判断
     if (models.length == 1) {
         $(".photo").css("flex-direction","column-reverse")
         var img = $('<img>',{
