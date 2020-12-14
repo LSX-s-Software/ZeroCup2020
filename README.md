@@ -99,13 +99,7 @@ jQuery: 用于一些DOM操作
 
 swiper.js:用于辅助制作轮播图
 
-## 五.界面原型(UI)图与部分展示图片
-
-UI原型图：
-
-蓝湖截图
-![蓝湖.png](https://i.loli.net/2020/12/04/4ZRj8Xdg3Fw7QAD.png)
-![Snipaste_2020-12-04_16-31-12.png](https://i.loli.net/2020/12/04/MN5w7iIez8ZLQGF.png)
+## 五.部分界面的展示图片
 
 第一屏
 
@@ -136,22 +130,15 @@ UI原型图：
 
 ![Snipaste_2020-12-14_21-55-50.png](https://i.loli.net/2020/12/14/4aMIjuR6NEeHBlL.png)
 
-GitHub commit记录
-
-![github commit截图.png](https://i.loli.net/2020/12/04/iEVD2yU1n8Y49Ms.png)
-
-GitHub issue记录
-![github issue截图.png](https://i.loli.net/2020/12/04/JgzXHICmtanYbG3.png)
-
-## 六. return 0；队成员及分工：
+## 六. return 0;队成员及分工：
 
 [AntigoneRandy](https://github.com/AntigoneRandy): 队长，武汉大学国家网络安全学院20级学生。主要负责主页的前端代码编写。
 
 > 博客：https://antigonerandy.github.io/ 
 
-[LSX-s-Software](https://github.com/LSX-s-Software): 队员，武汉大学计算机学院卓越工程师班20级学生。主要负责UI图绘制，轮播图板块的前端代码，以及小游戏的算法实现。
+[LSX-s-Software](https://github.com/LSX-s-Software): 队员，武汉大学计算机学院20级计科卓工班学生。主要负责UI设计、轮播图板块的前端代码，以及小游戏的算法实现。
 
-[Hoopopi](https://github.com/Hoopopi):队员，武汉大学国家网络安全学院20级学生。主要负责查找文案与图片资源，编写小游戏、名人堂和大事记的前端页面。
+[Hoopopi](https://github.com/Hoopopi): 队员，武汉大学国家网络安全学院20级学生。主要负责查找文案与图片资源，编写小游戏、名人堂和大事记的前端页面。
 
 ---
 
